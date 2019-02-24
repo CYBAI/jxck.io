@@ -44,7 +44,11 @@ class Inao < Rouge::Formatters::Null
     classes = self.classname(tok.qualname.split("."))
 
     if classes != nil
-      return "<CharStyle:#{classes}>" + safe_val.sub("\n", "<CharStyle:>\n")
+      if safe_val.include?("\n")
+        return "<CharStyle:#{classes}>" + safe_val.sub("\n", "<CharStyle:>\n")
+      else
+        return "<CharStyle:#{classes}>#{safe_val}<CharStyle:>"
+      end
     else
       safe_val
     end

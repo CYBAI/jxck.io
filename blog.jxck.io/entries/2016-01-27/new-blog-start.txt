@@ -5,249 +5,249 @@
 <ParaStyle:本文>サンプルコードがハイライトされてないのは技術書籍の怠慢
 <ParaStyle:小見出し>Javascript
 <ParaStyle:半行アキ>
-<ParaStyle:リスト><CharStyle:BoldBlack>import <CharStyle:BoldGray>file <CharStyle:BoldBlack>from <CharStyle:BoldGray>fs
+<ParaStyle:リスト><CharStyle:BoldBlack>import<CharStyle:> <CharStyle:BoldGray>file<CharStyle:> <CharStyle:BoldBlack>from<CharStyle:> <CharStyle:BoldGray>fs<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>function <CharStyle:BoldGray>callback(<CharStyle:BoldGray>err, <CharStyle:BoldGray>file) {
-<ParaStyle:リスト>  <CharStyle:BoldBlack>if (<CharStyle:BoldGray>err) <CharStyle:BoldBlack>return <CharStyle:BoldGray>console.<CharStyle:BoldGray>error(<CharStyle:BoldGray>err);
+<ParaStyle:リスト><CharStyle:BoldBlack>function<CharStyle:> <CharStyle:BoldGray>callback<CharStyle:>(<CharStyle:BoldGray>err<CharStyle:>, <CharStyle:BoldGray>file<CharStyle:>) {
+<ParaStyle:リスト>  <CharStyle:BoldBlack>if<CharStyle:> (<CharStyle:BoldGray>err<CharStyle:>) <CharStyle:BoldBlack>return<CharStyle:> <CharStyle:BoldGray>console<CharStyle:>.<CharStyle:BoldGray>error<CharStyle:>(<CharStyle:BoldGray>err<CharStyle:>);
 <ParaStyle:リスト>
-<ParaStyle:リスト>  <CharStyle:RegularSilverItalic>/* ここで色々する */
+<ParaStyle:リスト>  <CharStyle:RegularSilverItalic>/* ここで色々する */<CharStyle:>
 <ParaStyle:リスト>};
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldGray>file.<CharStyle:BoldGray>open(<CharStyle:BoldGray>callback);
+<ParaStyle:リスト><CharStyle:BoldGray>file<CharStyle:>.<CharStyle:BoldGray>open<CharStyle:>(<CharStyle:BoldGray>callback<CharStyle:>);
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>class <CharStyle:BoldGray>Test <CharStyle:BoldBlack>extends <CharStyle:BoldGray>EventEmitter {
-<ParaStyle:リスト>  <CharStyle:BoldBlack>constructor(<CharStyle:BoldGray>data) {
-<ParaStyle:リスト>    <CharStyle:BoldBlack>this.<CharStyle:BoldGray>data <CharStyle:RegularDark>= <CharStyle:BoldGray>data
+<ParaStyle:リスト><CharStyle:BoldBlack>class<CharStyle:> <CharStyle:BoldGray>Test<CharStyle:> <CharStyle:BoldBlack>extends<CharStyle:> <CharStyle:BoldGray>EventEmitter<CharStyle:> {
+<ParaStyle:リスト>  <CharStyle:BoldBlack>constructor<CharStyle:>(<CharStyle:BoldGray>data<CharStyle:>) {
+<ParaStyle:リスト>    <CharStyle:BoldBlack>this<CharStyle:>.<CharStyle:BoldGray>data<CharStyle:> <CharStyle:RegularDark>=<CharStyle:> <CharStyle:BoldGray>data<CharStyle:>
 <ParaStyle:リスト>  }
 <ParaStyle:リスト>
-<ParaStyle:リスト>  <CharStyle:BoldGray>jquery() {
-<ParaStyle:リスト>    <CharStyle:BoldGray>$(<CharStyle:RegularSilverItalic>'body').<CharStyle:BoldGray>innerHTML <CharStyle:RegularDark>= <CharStyle:RegularSilverItalic>"alert('xss')"
+<ParaStyle:リスト>  <CharStyle:BoldGray>jquery<CharStyle:>() {
+<ParaStyle:リスト>    <CharStyle:BoldGray>$<CharStyle:>(<CharStyle:RegularSilverItalic>'body'<CharStyle:>).<CharStyle:BoldGray>innerHTML<CharStyle:> <CharStyle:RegularDark>=<CharStyle:> <CharStyle:RegularSilverItalic>"alert('xss')"<CharStyle:>
 <ParaStyle:リスト>  }
 <ParaStyle:リスト>
-<ParaStyle:リスト>  <CharStyle:BoldGray>promise() {
-<ParaStyle:リスト>    <CharStyle:BoldBlack>return <CharStyle:BoldGray>Promise.<CharStyle:BoldGray>resolve(<CharStyle:RegularSilverItalic>'foo')
+<ParaStyle:リスト>  <CharStyle:BoldGray>promise<CharStyle:>() {
+<ParaStyle:リスト>    <CharStyle:BoldBlack>return<CharStyle:> <CharStyle:BoldGray>Promise<CharStyle:>.<CharStyle:BoldGray>resolve<CharStyle:>(<CharStyle:RegularSilverItalic>'foo'<CharStyle:>)
 <ParaStyle:リスト>  }
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>const <CharStyle:BoldGray>test <CharStyle:RegularDark>= <CharStyle:BoldBlack>new <CharStyle:BoldGray>Test()
-<ParaStyle:リスト><CharStyle:BoldGray>test.<CharStyle:BoldGray>promise().<CharStyle:BoldGray>then((<CharStyle:BoldGray>e) <CharStyle:RegularDark>=&gt; {
-<ParaStyle:リスト>  <CharStyle:BoldGray>console.<CharStyle:BoldGray>log(<CharStyle:BoldGray>e)
+<ParaStyle:リスト><CharStyle:BoldBlack>const<CharStyle:> <CharStyle:BoldGray>test<CharStyle:> <CharStyle:RegularDark>=<CharStyle:> <CharStyle:BoldBlack>new<CharStyle:> <CharStyle:BoldGray>Test<CharStyle:>()
+<ParaStyle:リスト><CharStyle:BoldGray>test<CharStyle:>.<CharStyle:BoldGray>promise<CharStyle:>().<CharStyle:BoldGray>then<CharStyle:>((<CharStyle:BoldGray>e<CharStyle:>) <CharStyle:RegularDark>=&gt;<CharStyle:> {
+<ParaStyle:リスト>  <CharStyle:BoldGray>console<CharStyle:>.<CharStyle:BoldGray>log<CharStyle:>(<CharStyle:BoldGray>e<CharStyle:>)
 <ParaStyle:リスト>})
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>export <CharStyle:BoldGray>module;<ParaStyle:小見出し>CSS
+<ParaStyle:リスト><CharStyle:BoldBlack>export<CharStyle:> <CharStyle:BoldGray>module<CharStyle:>;<ParaStyle:小見出し>CSS
 <ParaStyle:半行アキ>
-<ParaStyle:リスト><CharStyle:BoldBlack>strong<CharStyle:BoldGray>::before<CharStyle:RegularDark>,
-<ParaStyle:リスト><CharStyle:BoldBlack>strong<CharStyle:BoldGray>::after {
-<ParaStyle:リスト>  <CharStyle:BoldBlack>content: <CharStyle:RegularSilverItalic>"**";
+<ParaStyle:リスト><CharStyle:BoldBlack>strong<CharStyle:><CharStyle:BoldGray>::before<CharStyle:><CharStyle:RegularDark>,<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>strong<CharStyle:><CharStyle:BoldGray>::after<CharStyle:> {
+<ParaStyle:リスト>  <CharStyle:BoldBlack>content<CharStyle:>: <CharStyle:RegularSilverItalic>"**"<CharStyle:>;
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>ul <CharStyle:BoldBlack>li<CharStyle:BoldGray>::before {
-<ParaStyle:リスト>  <CharStyle:BoldBlack>content: <CharStyle:RegularSilverItalic>"- ";
+<ParaStyle:リスト><CharStyle:BoldBlack>ul<CharStyle:> <CharStyle:BoldBlack>li<CharStyle:><CharStyle:BoldGray>::before<CharStyle:> {
+<ParaStyle:リスト>  <CharStyle:BoldBlack>content<CharStyle:>: <CharStyle:RegularSilverItalic>"- "<CharStyle:>;
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>ol {
-<ParaStyle:リスト>  <CharStyle:BoldBlack>counter-reset: <CharStyle:BoldGray>list;
+<ParaStyle:リスト><CharStyle:BoldBlack>ol<CharStyle:> {
+<ParaStyle:リスト>  <CharStyle:BoldBlack>counter-reset<CharStyle:>: <CharStyle:BoldGray>list<CharStyle:>;
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>ol <CharStyle:BoldBlack>li<CharStyle:BoldGray>::before {
-<ParaStyle:リスト>  <CharStyle:BoldBlack>counter-increment: <CharStyle:BoldGray>list;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>content: <CharStyle:BoldGray>counter(<CharStyle:BoldGray>list) <CharStyle:RegularSilverItalic>". ";
+<ParaStyle:リスト><CharStyle:BoldBlack>ol<CharStyle:> <CharStyle:BoldBlack>li<CharStyle:><CharStyle:BoldGray>::before<CharStyle:> {
+<ParaStyle:リスト>  <CharStyle:BoldBlack>counter-increment<CharStyle:>: <CharStyle:BoldGray>list<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>content<CharStyle:>: <CharStyle:BoldGray>counter<CharStyle:>(<CharStyle:BoldGray>list<CharStyle:>) <CharStyle:RegularSilverItalic>". "<CharStyle:>;
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>dl <CharStyle:BoldBlack>dt<CharStyle:BoldGray>::after {
-<ParaStyle:リスト>  <CharStyle:BoldBlack>content: <CharStyle:RegularSilverItalic>":";
+<ParaStyle:リスト><CharStyle:BoldBlack>dl<CharStyle:> <CharStyle:BoldBlack>dt<CharStyle:><CharStyle:BoldGray>::after<CharStyle:> {
+<ParaStyle:リスト>  <CharStyle:BoldBlack>content<CharStyle:>: <CharStyle:RegularSilverItalic>":"<CharStyle:>;
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>blockquote {
-<ParaStyle:リスト>  <CharStyle:BoldBlack>display: <CharStyle:BoldGray>block;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>border: <CharStyle:BoldGray>solid <CharStyle:RegularDark>1px <CharStyle:BoldGray>var(<CharStyle:BoldGray>--block-quote);
-<ParaStyle:リスト>  <CharStyle:BoldBlack>border-radius: <CharStyle:RegularDark>4px;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>padding: <CharStyle:RegularDark>0.4em <CharStyle:RegularDark>1em;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>margin: <CharStyle:RegularDark>0;
+<ParaStyle:リスト><CharStyle:BoldBlack>blockquote<CharStyle:> {
+<ParaStyle:リスト>  <CharStyle:BoldBlack>display<CharStyle:>: <CharStyle:BoldGray>block<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>border<CharStyle:>: <CharStyle:BoldGray>solid<CharStyle:> <CharStyle:RegularDark>1px<CharStyle:> <CharStyle:BoldGray>var<CharStyle:>(<CharStyle:BoldGray>--block-quote<CharStyle:>);
+<ParaStyle:リスト>  <CharStyle:BoldBlack>border-radius<CharStyle:>: <CharStyle:RegularDark>4px<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>padding<CharStyle:>: <CharStyle:RegularDark>0.4em<CharStyle:> <CharStyle:RegularDark>1em<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>margin<CharStyle:>: <CharStyle:RegularDark>0<CharStyle:>;
 <ParaStyle:リスト>}<ParaStyle:小見出し>HTML
 <ParaStyle:半行アキ>
-<ParaStyle:リスト><CharStyle:RegularSilverItalic>&lt;!DOCTYPE html&gt;
-<ParaStyle:リスト><CharStyle:BoldBlack>&lt;meta <CharStyle:BoldGray>charset=<CharStyle:RegularSilverItalic>utf-8<CharStyle:BoldBlack>&gt;
-<ParaStyle:リスト><CharStyle:BoldBlack>&lt;meta <CharStyle:BoldGray>name=<CharStyle:RegularSilverItalic>viewport <CharStyle:BoldGray>content=<CharStyle:RegularSilverItalic>"width=device-width,initial-scale=1"<CharStyle:BoldBlack>&gt;
-<ParaStyle:リスト><CharStyle:BoldBlack>&lt;title&gt;DEMO | labs.jxck.io<CharStyle:BoldBlack>&lt;/title&gt;
+<ParaStyle:リスト><CharStyle:RegularSilverItalic>&lt;!DOCTYPE html&gt;<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>&lt;meta<CharStyle:> <CharStyle:BoldGray>charset=<CharStyle:><CharStyle:RegularSilverItalic>utf-8<CharStyle:><CharStyle:BoldBlack>&gt;<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>&lt;meta<CharStyle:> <CharStyle:BoldGray>name=<CharStyle:><CharStyle:RegularSilverItalic>viewport<CharStyle:> <CharStyle:BoldGray>content=<CharStyle:><CharStyle:RegularSilverItalic>"width=device-width,initial-scale=1"<CharStyle:><CharStyle:BoldBlack>&gt;<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>&lt;title&gt;<CharStyle:>DEMO | labs.jxck.io<CharStyle:BoldBlack>&lt;/title&gt;<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>&lt;style&gt;
-<ParaStyle:リスト><CharStyle:BoldBlack>&lt;/style&gt;
+<ParaStyle:リスト><CharStyle:BoldBlack>&lt;style&gt;<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>&lt;/style&gt;<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>&lt;h1&gt;Test<CharStyle:BoldBlack>&lt;/h1&gt;
-<ParaStyle:リスト><CharStyle:BoldBlack>&lt;p&gt;this is <CharStyle:BoldBlack>&lt;strong&gt;sample<CharStyle:BoldBlack>&lt;/strong&gt; text<CharStyle:BoldBlack>&lt;/p&gt;
+<ParaStyle:リスト><CharStyle:BoldBlack>&lt;h1&gt;<CharStyle:>Test<CharStyle:BoldBlack>&lt;/h1&gt;<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>&lt;p&gt;<CharStyle:>this is <CharStyle:BoldBlack>&lt;strong&gt;<CharStyle:>sample<CharStyle:BoldBlack>&lt;/strong&gt;<CharStyle:> text<CharStyle:BoldBlack>&lt;/p&gt;<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>&lt;div&gt;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>&lt;video <CharStyle:BoldGray>src=<CharStyle:RegularSilverItalic>"some.mp4"<CharStyle:BoldBlack>&gt;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>&lt;img <CharStyle:BoldGray>src=<CharStyle:RegularSilverItalic>some.webp <CharStyle:BoldGray>label=<CharStyle:RegularSilverItalic>"good picture"<CharStyle:BoldBlack>&gt;
+<ParaStyle:リスト><CharStyle:BoldBlack>&lt;div&gt;<CharStyle:>
+<ParaStyle:リスト>  <CharStyle:BoldBlack>&lt;video<CharStyle:> <CharStyle:BoldGray>src=<CharStyle:><CharStyle:RegularSilverItalic>"some.mp4"<CharStyle:><CharStyle:BoldBlack>&gt;<CharStyle:>
+<ParaStyle:リスト>  <CharStyle:BoldBlack>&lt;img<CharStyle:> <CharStyle:BoldGray>src=<CharStyle:><CharStyle:RegularSilverItalic>some.webp<CharStyle:> <CharStyle:BoldGray>label=<CharStyle:><CharStyle:RegularSilverItalic>"good picture"<CharStyle:><CharStyle:BoldBlack>&gt;<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト>  <CharStyle:BoldBlack>&lt;form <CharStyle:BoldGray>action=<CharStyle:RegularSilverItalic>/login <CharStyle:BoldGray>method=<CharStyle:RegularSilverItalic>post<CharStyle:BoldBlack>&gt;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>&lt;input <CharStyle:BoldGray>type=<CharStyle:RegularSilverItalic>text <CharStyle:BoldGray>name=<CharStyle:RegularSilverItalic>username<CharStyle:BoldBlack>&gt;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>&lt;input <CharStyle:BoldGray>type=<CharStyle:RegularSilverItalic>password <CharStyle:BoldGray>name=<CharStyle:RegularSilverItalic>password<CharStyle:BoldBlack>&gt;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>&lt;button <CharStyle:BoldGray>type=<CharStyle:RegularSilverItalic>submit<CharStyle:BoldBlack>&gt;ok<CharStyle:BoldBlack>&lt;/button&gt;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>&lt;/form&gt;
-<ParaStyle:リスト><CharStyle:BoldBlack>&lt;/div&gt;<ParaStyle:小見出し>Java
+<ParaStyle:リスト>  <CharStyle:BoldBlack>&lt;form<CharStyle:> <CharStyle:BoldGray>action=<CharStyle:><CharStyle:RegularSilverItalic>/login<CharStyle:> <CharStyle:BoldGray>method=<CharStyle:><CharStyle:RegularSilverItalic>post<CharStyle:><CharStyle:BoldBlack>&gt;<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:BoldBlack>&lt;input<CharStyle:> <CharStyle:BoldGray>type=<CharStyle:><CharStyle:RegularSilverItalic>text<CharStyle:> <CharStyle:BoldGray>name=<CharStyle:><CharStyle:RegularSilverItalic>username<CharStyle:><CharStyle:BoldBlack>&gt;<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:BoldBlack>&lt;input<CharStyle:> <CharStyle:BoldGray>type=<CharStyle:><CharStyle:RegularSilverItalic>password<CharStyle:> <CharStyle:BoldGray>name=<CharStyle:><CharStyle:RegularSilverItalic>password<CharStyle:><CharStyle:BoldBlack>&gt;<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:BoldBlack>&lt;button<CharStyle:> <CharStyle:BoldGray>type=<CharStyle:><CharStyle:RegularSilverItalic>submit<CharStyle:><CharStyle:BoldBlack>&gt;<CharStyle:>ok<CharStyle:BoldBlack>&lt;/button&gt;<CharStyle:>
+<ParaStyle:リスト>  <CharStyle:BoldBlack>&lt;/form&gt;<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>&lt;/div&gt;<CharStyle:><ParaStyle:小見出し>Java
 <ParaStyle:半行アキ>
-<ParaStyle:リスト><CharStyle:BoldBlack>public <CharStyle:BoldBlack>class <CharStyle:BoldGray>DecimalOctal <CharStyle:RegularDark>{
+<ParaStyle:リスト><CharStyle:BoldBlack>public<CharStyle:> <CharStyle:BoldBlack>class<CharStyle:> <CharStyle:BoldGray>DecimalOctal<CharStyle:> <CharStyle:RegularDark>{<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト>    <CharStyle:BoldBlack>public <CharStyle:BoldBlack>static <CharStyle:BoldBlack>void <CharStyle:BoldGray>main<CharStyle:RegularDark>(<CharStyle:BoldGray>String<CharStyle:RegularDark>[] <CharStyle:BoldGray>args<CharStyle:RegularDark>) <CharStyle:RegularDark>{
-<ParaStyle:リスト>        <CharStyle:BoldBlack>int <CharStyle:BoldGray>decimal <CharStyle:RegularDark>= <CharStyle:RegularDark>78<CharStyle:RegularDark>;
-<ParaStyle:リスト>        <CharStyle:BoldBlack>int <CharStyle:BoldGray>octal <CharStyle:RegularDark>= <CharStyle:BoldGray>convertDecimalToOctal<CharStyle:RegularDark>(<CharStyle:BoldGray>decimal<CharStyle:RegularDark>);
-<ParaStyle:リスト>        <CharStyle:BoldGray>System<CharStyle:RegularDark>.<CharStyle:BoldGray>out<CharStyle:RegularDark>.<CharStyle:BoldGray>printf<CharStyle:RegularDark>(<CharStyle:RegularSilverItalic>"%d in decimal = %d in octal"<CharStyle:RegularDark>, <CharStyle:BoldGray>decimal<CharStyle:RegularDark>, <CharStyle:BoldGray>octal<CharStyle:RegularDark>);
-<ParaStyle:リスト>    <CharStyle:RegularDark>}
+<ParaStyle:リスト>    <CharStyle:BoldBlack>public<CharStyle:> <CharStyle:BoldBlack>static<CharStyle:> <CharStyle:BoldBlack>void<CharStyle:> <CharStyle:BoldGray>main<CharStyle:><CharStyle:RegularDark>(<CharStyle:><CharStyle:BoldGray>String<CharStyle:><CharStyle:RegularDark>[]<CharStyle:> <CharStyle:BoldGray>args<CharStyle:><CharStyle:RegularDark>)<CharStyle:> <CharStyle:RegularDark>{<CharStyle:>
+<ParaStyle:リスト>        <CharStyle:BoldBlack>int<CharStyle:> <CharStyle:BoldGray>decimal<CharStyle:> <CharStyle:RegularDark>=<CharStyle:> <CharStyle:RegularDark>78<CharStyle:><CharStyle:RegularDark>;<CharStyle:>
+<ParaStyle:リスト>        <CharStyle:BoldBlack>int<CharStyle:> <CharStyle:BoldGray>octal<CharStyle:> <CharStyle:RegularDark>=<CharStyle:> <CharStyle:BoldGray>convertDecimalToOctal<CharStyle:><CharStyle:RegularDark>(<CharStyle:><CharStyle:BoldGray>decimal<CharStyle:><CharStyle:RegularDark>);<CharStyle:>
+<ParaStyle:リスト>        <CharStyle:BoldGray>System<CharStyle:><CharStyle:RegularDark>.<CharStyle:><CharStyle:BoldGray>out<CharStyle:><CharStyle:RegularDark>.<CharStyle:><CharStyle:BoldGray>printf<CharStyle:><CharStyle:RegularDark>(<CharStyle:><CharStyle:RegularSilverItalic>"%d in decimal = %d in octal"<CharStyle:><CharStyle:RegularDark>,<CharStyle:> <CharStyle:BoldGray>decimal<CharStyle:><CharStyle:RegularDark>,<CharStyle:> <CharStyle:BoldGray>octal<CharStyle:><CharStyle:RegularDark>);<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:RegularDark>}<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト>    <CharStyle:BoldBlack>public <CharStyle:BoldBlack>static <CharStyle:BoldBlack>int <CharStyle:BoldGray>convertDecimalToOctal<CharStyle:RegularDark>(<CharStyle:BoldBlack>int <CharStyle:BoldGray>decimal<CharStyle:RegularDark>)
-<ParaStyle:リスト>    <CharStyle:RegularDark>{
-<ParaStyle:リスト>        <CharStyle:BoldBlack>int <CharStyle:BoldGray>octalNumber <CharStyle:RegularDark>= <CharStyle:RegularDark>0<CharStyle:RegularDark>, <CharStyle:BoldGray>i <CharStyle:RegularDark>= <CharStyle:RegularDark>1<CharStyle:RegularDark>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>public<CharStyle:> <CharStyle:BoldBlack>static<CharStyle:> <CharStyle:BoldBlack>int<CharStyle:> <CharStyle:BoldGray>convertDecimalToOctal<CharStyle:><CharStyle:RegularDark>(<CharStyle:><CharStyle:BoldBlack>int<CharStyle:> <CharStyle:BoldGray>decimal<CharStyle:><CharStyle:RegularDark>)<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:RegularDark>{<CharStyle:>
+<ParaStyle:リスト>        <CharStyle:BoldBlack>int<CharStyle:> <CharStyle:BoldGray>octalNumber<CharStyle:> <CharStyle:RegularDark>=<CharStyle:> <CharStyle:RegularDark>0<CharStyle:><CharStyle:RegularDark>,<CharStyle:> <CharStyle:BoldGray>i<CharStyle:> <CharStyle:RegularDark>=<CharStyle:> <CharStyle:RegularDark>1<CharStyle:><CharStyle:RegularDark>;<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト>        <CharStyle:BoldBlack>while <CharStyle:RegularDark>(<CharStyle:BoldGray>decimal <CharStyle:RegularDark>!= <CharStyle:RegularDark>0<CharStyle:RegularDark>)
-<ParaStyle:リスト>        <CharStyle:RegularDark>{
-<ParaStyle:リスト>            <CharStyle:BoldGray>octalNumber <CharStyle:RegularDark>+= <CharStyle:RegularDark>(<CharStyle:BoldGray>decimal <CharStyle:RegularDark>% <CharStyle:RegularDark>8<CharStyle:RegularDark>) <CharStyle:RegularDark>* <CharStyle:BoldGray>i<CharStyle:RegularDark>;
-<ParaStyle:リスト>            <CharStyle:BoldGray>decimal <CharStyle:RegularDark>/= <CharStyle:RegularDark>8<CharStyle:RegularDark>;
-<ParaStyle:リスト>            <CharStyle:BoldGray>i <CharStyle:RegularDark>*= <CharStyle:RegularDark>10<CharStyle:RegularDark>;
-<ParaStyle:リスト>        <CharStyle:RegularDark>}
+<ParaStyle:リスト>        <CharStyle:BoldBlack>while<CharStyle:> <CharStyle:RegularDark>(<CharStyle:><CharStyle:BoldGray>decimal<CharStyle:> <CharStyle:RegularDark>!=<CharStyle:> <CharStyle:RegularDark>0<CharStyle:><CharStyle:RegularDark>)<CharStyle:>
+<ParaStyle:リスト>        <CharStyle:RegularDark>{<CharStyle:>
+<ParaStyle:リスト>            <CharStyle:BoldGray>octalNumber<CharStyle:> <CharStyle:RegularDark>+=<CharStyle:> <CharStyle:RegularDark>(<CharStyle:><CharStyle:BoldGray>decimal<CharStyle:> <CharStyle:RegularDark>%<CharStyle:> <CharStyle:RegularDark>8<CharStyle:><CharStyle:RegularDark>)<CharStyle:> <CharStyle:RegularDark>*<CharStyle:> <CharStyle:BoldGray>i<CharStyle:><CharStyle:RegularDark>;<CharStyle:>
+<ParaStyle:リスト>            <CharStyle:BoldGray>decimal<CharStyle:> <CharStyle:RegularDark>/=<CharStyle:> <CharStyle:RegularDark>8<CharStyle:><CharStyle:RegularDark>;<CharStyle:>
+<ParaStyle:リスト>            <CharStyle:BoldGray>i<CharStyle:> <CharStyle:RegularDark>*=<CharStyle:> <CharStyle:RegularDark>10<CharStyle:><CharStyle:RegularDark>;<CharStyle:>
+<ParaStyle:リスト>        <CharStyle:RegularDark>}<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト>        <CharStyle:BoldBlack>return <CharStyle:BoldGray>octalNumber<CharStyle:RegularDark>;
-<ParaStyle:リスト>    <CharStyle:RegularDark>}
-<ParaStyle:リスト><CharStyle:RegularDark>}<ParaStyle:小見出し>HTTP
+<ParaStyle:リスト>        <CharStyle:BoldBlack>return<CharStyle:> <CharStyle:BoldGray>octalNumber<CharStyle:><CharStyle:RegularDark>;<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:RegularDark>}<CharStyle:>
+<ParaStyle:リスト><CharStyle:RegularDark>}<CharStyle:><ParaStyle:小見出し>HTTP
 <ParaStyle:半行アキ>
-<ParaStyle:リスト><CharStyle:BoldGray>POST <CharStyle:BoldGray>/demo/submit/ <CharStyle:BoldBlack>HTTP<CharStyle:RegularDark>/<CharStyle:RegularDark>1.1
-<ParaStyle:リスト><CharStyle:BoldGray>Host: <CharStyle:RegularSilverItalic>rouge.jneen.net
-<ParaStyle:リスト><CharStyle:BoldGray>Cache-Control: <CharStyle:RegularSilverItalic>max-age=0
-<ParaStyle:リスト><CharStyle:BoldGray>Origin: <CharStyle:RegularSilverItalic>http://rouge.jayferd.us
-<ParaStyle:リスト><CharStyle:BoldGray>User-Agent: <CharStyle:RegularSilverItalic>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.63 Safari/535.7
-<ParaStyle:リスト><CharStyle:BoldGray>Content-Type: <CharStyle:RegularSilverItalic>application/json
-<ParaStyle:リスト><CharStyle:BoldGray>Accept: <CharStyle:RegularSilverItalic>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-<ParaStyle:リスト><CharStyle:BoldGray>Referer: <CharStyle:RegularSilverItalic>http://pygments.org/
-<ParaStyle:リスト><CharStyle:BoldGray>Accept-Encoding: <CharStyle:RegularSilverItalic>gzip,deflate,sdch
-<ParaStyle:リスト><CharStyle:BoldGray>Accept-Language: <CharStyle:RegularSilverItalic>en-US,en;q=0.8
-<ParaStyle:リスト><CharStyle:BoldGray>Accept-Charset: <CharStyle:RegularSilverItalic>windows-949,utf-8;q=0.7,*;q=0.3
+<ParaStyle:リスト><CharStyle:BoldGray>POST<CharStyle:> <CharStyle:BoldGray>/demo/submit/<CharStyle:> <CharStyle:BoldBlack>HTTP<CharStyle:><CharStyle:RegularDark>/<CharStyle:><CharStyle:RegularDark>1.1<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldGray>Host<CharStyle:>: <CharStyle:RegularSilverItalic>rouge.jneen.net<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldGray>Cache-Control<CharStyle:>: <CharStyle:RegularSilverItalic>max-age=0<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldGray>Origin<CharStyle:>: <CharStyle:RegularSilverItalic>http://rouge.jayferd.us<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldGray>User-Agent<CharStyle:>: <CharStyle:RegularSilverItalic>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.63 Safari/535.7<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldGray>Content-Type<CharStyle:>: <CharStyle:RegularSilverItalic>application/json<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldGray>Accept<CharStyle:>: <CharStyle:RegularSilverItalic>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldGray>Referer<CharStyle:>: <CharStyle:RegularSilverItalic>http://pygments.org/<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldGray>Accept-Encoding<CharStyle:>: <CharStyle:RegularSilverItalic>gzip,deflate,sdch<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldGray>Accept-Language<CharStyle:>: <CharStyle:RegularSilverItalic>en-US,en;q=0.8<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldGray>Accept-Charset<CharStyle:>: <CharStyle:RegularSilverItalic>windows-949,utf-8;q=0.7,*;q=0.3<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト>{<CharStyle:RegularSilverItalic>"name":<CharStyle:RegularSilverItalic>"test",<CharStyle:RegularSilverItalic>"lang":<CharStyle:RegularSilverItalic>"text",<CharStyle:RegularSilverItalic>"boring":<CharStyle:BoldBlack>true}<ParaStyle:小見出し>Go
+<ParaStyle:リスト>{<CharStyle:RegularSilverItalic>"name"<CharStyle:>:<CharStyle:RegularSilverItalic>"test"<CharStyle:>,<CharStyle:RegularSilverItalic>"lang"<CharStyle:>:<CharStyle:RegularSilverItalic>"text"<CharStyle:>,<CharStyle:RegularSilverItalic>"boring"<CharStyle:>:<CharStyle:BoldBlack>true<CharStyle:>}<ParaStyle:小見出し>Go
 <ParaStyle:半行アキ>
-<ParaStyle:リスト><CharStyle:BoldBlack>package <CharStyle:BoldGray>main
+<ParaStyle:リスト><CharStyle:BoldBlack>package<CharStyle:> <CharStyle:BoldGray>main<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>import (
-<ParaStyle:リスト>	<CharStyle:RegularSilverItalic>"fmt"
-<ParaStyle:リスト>	<CharStyle:RegularSilverItalic>"math"
+<ParaStyle:リスト><CharStyle:BoldBlack>import<CharStyle:> (
+<ParaStyle:リスト>	<CharStyle:RegularSilverItalic>"fmt"<CharStyle:>
+<ParaStyle:リスト>	<CharStyle:RegularSilverItalic>"math"<CharStyle:>
 <ParaStyle:リスト>)
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>type <CharStyle:BoldGray>Abser <CharStyle:BoldBlack>interface {
-<ParaStyle:リスト>	<CharStyle:BoldGray>Abs() <CharStyle:BoldBlack>float64
+<ParaStyle:リスト><CharStyle:BoldBlack>type<CharStyle:> <CharStyle:BoldGray>Abser<CharStyle:> <CharStyle:BoldBlack>interface<CharStyle:> {
+<ParaStyle:リスト>	<CharStyle:BoldGray>Abs<CharStyle:>() <CharStyle:BoldBlack>float64<CharStyle:>
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>func <CharStyle:BoldGray>main() {
-<ParaStyle:リスト>	<CharStyle:BoldBlack>var <CharStyle:BoldGray>a <CharStyle:BoldGray>Abser
-<ParaStyle:リスト>	<CharStyle:BoldGray>f <CharStyle:RegularDark>:= <CharStyle:BoldGray>MyFloat(<CharStyle:RegularDark>-<CharStyle:BoldGray>math<CharStyle:RegularDark>.<CharStyle:BoldGray>Sqrt2)
-<ParaStyle:リスト>	<CharStyle:BoldGray>v <CharStyle:RegularDark>:= <CharStyle:BoldGray>Vertex{<CharStyle:RegularDark>3, <CharStyle:RegularDark>4}
+<ParaStyle:リスト><CharStyle:BoldBlack>func<CharStyle:> <CharStyle:BoldGray>main<CharStyle:>() {
+<ParaStyle:リスト>	<CharStyle:BoldBlack>var<CharStyle:> <CharStyle:BoldGray>a<CharStyle:> <CharStyle:BoldGray>Abser<CharStyle:>
+<ParaStyle:リスト>	<CharStyle:BoldGray>f<CharStyle:> <CharStyle:RegularDark>:=<CharStyle:> <CharStyle:BoldGray>MyFloat<CharStyle:>(<CharStyle:RegularDark>-<CharStyle:><CharStyle:BoldGray>math<CharStyle:><CharStyle:RegularDark>.<CharStyle:><CharStyle:BoldGray>Sqrt2<CharStyle:>)
+<ParaStyle:リスト>	<CharStyle:BoldGray>v<CharStyle:> <CharStyle:RegularDark>:=<CharStyle:> <CharStyle:BoldGray>Vertex<CharStyle:>{<CharStyle:RegularDark>3<CharStyle:>, <CharStyle:RegularDark>4<CharStyle:>}
 <ParaStyle:リスト>
-<ParaStyle:リスト>	<CharStyle:BoldGray>a <CharStyle:RegularDark>= <CharStyle:BoldGray>f  <CharStyle:RegularSilverItalic>// a MyFloat implements Abser
-<ParaStyle:リスト>	<CharStyle:BoldGray>a <CharStyle:RegularDark>= <CharStyle:RegularDark>&amp;<CharStyle:BoldGray>v <CharStyle:RegularSilverItalic>// a *Vertex implements Abser
+<ParaStyle:リスト>	<CharStyle:BoldGray>a<CharStyle:> <CharStyle:RegularDark>=<CharStyle:> <CharStyle:BoldGray>f<CharStyle:>  <CharStyle:RegularSilverItalic>// a MyFloat implements Abser<CharStyle:>
+<ParaStyle:リスト>	<CharStyle:BoldGray>a<CharStyle:> <CharStyle:RegularDark>=<CharStyle:> <CharStyle:RegularDark>&amp;<CharStyle:><CharStyle:BoldGray>v<CharStyle:> <CharStyle:RegularSilverItalic>// a *Vertex implements Abser<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト>	<CharStyle:RegularSilverItalic>// In the following line, v is a Vertex (not *Vertex)
-<ParaStyle:リスト>	<CharStyle:RegularSilverItalic>// and does NOT implement Abser.
-<ParaStyle:リスト>	<CharStyle:BoldGray>a <CharStyle:RegularDark>= <CharStyle:BoldGray>v
+<ParaStyle:リスト>	<CharStyle:RegularSilverItalic>// In the following line, v is a Vertex (not *Vertex)<CharStyle:>
+<ParaStyle:リスト>	<CharStyle:RegularSilverItalic>// and does NOT implement Abser.<CharStyle:>
+<ParaStyle:リスト>	<CharStyle:BoldGray>a<CharStyle:> <CharStyle:RegularDark>=<CharStyle:> <CharStyle:BoldGray>v<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト>	<CharStyle:BoldGray>fmt<CharStyle:RegularDark>.<CharStyle:BoldGray>Println(<CharStyle:BoldGray>a<CharStyle:RegularDark>.<CharStyle:BoldGray>Abs())
+<ParaStyle:リスト>	<CharStyle:BoldGray>fmt<CharStyle:><CharStyle:RegularDark>.<CharStyle:><CharStyle:BoldGray>Println<CharStyle:>(<CharStyle:BoldGray>a<CharStyle:><CharStyle:RegularDark>.<CharStyle:><CharStyle:BoldGray>Abs<CharStyle:>())
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>type <CharStyle:BoldGray>MyFloat <CharStyle:BoldBlack>float64
+<ParaStyle:リスト><CharStyle:BoldBlack>type<CharStyle:> <CharStyle:BoldGray>MyFloat<CharStyle:> <CharStyle:BoldBlack>float64<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>func (<CharStyle:BoldGray>f <CharStyle:BoldGray>MyFloat) <CharStyle:BoldGray>Abs() <CharStyle:BoldBlack>float64 {
-<ParaStyle:リスト>	<CharStyle:BoldBlack>if <CharStyle:BoldGray>f <CharStyle:RegularDark>&lt; <CharStyle:RegularDark>0 {
-<ParaStyle:リスト>		<CharStyle:BoldBlack>return <CharStyle:BoldBlack>float64(<CharStyle:RegularDark>-<CharStyle:BoldGray>f)
+<ParaStyle:リスト><CharStyle:BoldBlack>func<CharStyle:> (<CharStyle:BoldGray>f<CharStyle:> <CharStyle:BoldGray>MyFloat<CharStyle:>) <CharStyle:BoldGray>Abs<CharStyle:>() <CharStyle:BoldBlack>float64<CharStyle:> {
+<ParaStyle:リスト>	<CharStyle:BoldBlack>if<CharStyle:> <CharStyle:BoldGray>f<CharStyle:> <CharStyle:RegularDark>&lt;<CharStyle:> <CharStyle:RegularDark>0<CharStyle:> {
+<ParaStyle:リスト>		<CharStyle:BoldBlack>return<CharStyle:> <CharStyle:BoldBlack>float64<CharStyle:>(<CharStyle:RegularDark>-<CharStyle:><CharStyle:BoldGray>f<CharStyle:>)
 <ParaStyle:リスト>	}
-<ParaStyle:リスト>	<CharStyle:BoldBlack>return <CharStyle:BoldBlack>float64(<CharStyle:BoldGray>f)
+<ParaStyle:リスト>	<CharStyle:BoldBlack>return<CharStyle:> <CharStyle:BoldBlack>float64<CharStyle:>(<CharStyle:BoldGray>f<CharStyle:>)
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>type <CharStyle:BoldGray>Vertex <CharStyle:BoldBlack>struct {
-<ParaStyle:リスト>	<CharStyle:BoldGray>X, <CharStyle:BoldGray>Y <CharStyle:BoldBlack>float64
+<ParaStyle:リスト><CharStyle:BoldBlack>type<CharStyle:> <CharStyle:BoldGray>Vertex<CharStyle:> <CharStyle:BoldBlack>struct<CharStyle:> {
+<ParaStyle:リスト>	<CharStyle:BoldGray>X<CharStyle:>, <CharStyle:BoldGray>Y<CharStyle:> <CharStyle:BoldBlack>float64<CharStyle:>
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>func (<CharStyle:BoldGray>v <CharStyle:RegularDark>*<CharStyle:BoldGray>Vertex) <CharStyle:BoldGray>Abs() <CharStyle:BoldBlack>float64 {
-<ParaStyle:リスト>	<CharStyle:BoldBlack>return <CharStyle:BoldGray>math<CharStyle:RegularDark>.<CharStyle:BoldGray>Sqrt(<CharStyle:BoldGray>v<CharStyle:RegularDark>.<CharStyle:BoldGray>X<CharStyle:RegularDark>*<CharStyle:BoldGray>v<CharStyle:RegularDark>.<CharStyle:BoldGray>X <CharStyle:RegularDark>+ <CharStyle:BoldGray>v<CharStyle:RegularDark>.<CharStyle:BoldGray>Y<CharStyle:RegularDark>*<CharStyle:BoldGray>v<CharStyle:RegularDark>.<CharStyle:BoldGray>Y)
+<ParaStyle:リスト><CharStyle:BoldBlack>func<CharStyle:> (<CharStyle:BoldGray>v<CharStyle:> <CharStyle:RegularDark>*<CharStyle:><CharStyle:BoldGray>Vertex<CharStyle:>) <CharStyle:BoldGray>Abs<CharStyle:>() <CharStyle:BoldBlack>float64<CharStyle:> {
+<ParaStyle:リスト>	<CharStyle:BoldBlack>return<CharStyle:> <CharStyle:BoldGray>math<CharStyle:><CharStyle:RegularDark>.<CharStyle:><CharStyle:BoldGray>Sqrt<CharStyle:>(<CharStyle:BoldGray>v<CharStyle:><CharStyle:RegularDark>.<CharStyle:><CharStyle:BoldGray>X<CharStyle:><CharStyle:RegularDark>*<CharStyle:><CharStyle:BoldGray>v<CharStyle:><CharStyle:RegularDark>.<CharStyle:><CharStyle:BoldGray>X<CharStyle:> <CharStyle:RegularDark>+<CharStyle:> <CharStyle:BoldGray>v<CharStyle:><CharStyle:RegularDark>.<CharStyle:><CharStyle:BoldGray>Y<CharStyle:><CharStyle:RegularDark>*<CharStyle:><CharStyle:BoldGray>v<CharStyle:><CharStyle:RegularDark>.<CharStyle:><CharStyle:BoldGray>Y<CharStyle:>)
 <ParaStyle:リスト>}<ParaStyle:小見出し>Makefile
 <ParaStyle:半行アキ>
 <ParaStyle:リスト><CharStyle:RegularSilverItalic># Makefile<CharStyle:>
-<ParaStyle:リスト><CharStyle:BoldBlack>.PHONY<CharStyle:RegularDark>: <CharStyle:BoldGray>all
-<ParaStyle:リスト><CharStyle:BoldBlack>all<CharStyle:RegularDark>: <CharStyle:BoldGray>main
+<ParaStyle:リスト><CharStyle:BoldBlack>.PHONY<CharStyle:><CharStyle:RegularDark>:<CharStyle:> <CharStyle:BoldGray>all<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>all<CharStyle:><CharStyle:RegularDark>:<CharStyle:> <CharStyle:BoldGray>main<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>main<CharStyle:RegularDark>: <CharStyle:BoldGray>main.o
-<ParaStyle:リスト>	gcc <CharStyle:BoldBlack>-o main main.o
+<ParaStyle:リスト><CharStyle:BoldBlack>main<CharStyle:><CharStyle:RegularDark>:<CharStyle:> <CharStyle:BoldGray>main.o<CharStyle:>
+<ParaStyle:リスト>	gcc <CharStyle:BoldBlack>-o<CharStyle:> main main.o
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>main.o<CharStyle:RegularDark>: <CharStyle:BoldGray>main.c
-<ParaStyle:リスト>	gcc <CharStyle:BoldBlack>-c main.c
+<ParaStyle:リスト><CharStyle:BoldBlack>main.o<CharStyle:><CharStyle:RegularDark>:<CharStyle:> <CharStyle:BoldGray>main.c<CharStyle:>
+<ParaStyle:リスト>	gcc <CharStyle:BoldBlack>-c<CharStyle:> main.c
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>.PHONY<CharStyle:RegularDark>: <CharStyle:BoldGray>clean
-<ParaStyle:リスト><CharStyle:BoldBlack>clean<CharStyle:RegularDark>:
-<ParaStyle:リスト>	<CharStyle:BoldGray>rm <CharStyle:BoldBlack>-rf main main.o<ParaStyle:小見出し>Nginx
+<ParaStyle:リスト><CharStyle:BoldBlack>.PHONY<CharStyle:><CharStyle:RegularDark>:<CharStyle:> <CharStyle:BoldGray>clean<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>clean<CharStyle:><CharStyle:RegularDark>:<CharStyle:>
+<ParaStyle:リスト>	<CharStyle:BoldGray>rm<CharStyle:> <CharStyle:BoldBlack>-rf<CharStyle:> main main.o<ParaStyle:小見出し>Nginx
 <ParaStyle:半行アキ>
-<ParaStyle:リスト><CharStyle:BoldBlack>user       <CharStyle:RegularSilverItalic>www <CharStyle:RegularSilverItalic>www;  <CharStyle:RegularSilverItalic>## Default: nobody<CharStyle:>
-<ParaStyle:リスト><CharStyle:BoldBlack>worker_processes  <CharStyle:RegularDark>5;  <CharStyle:RegularSilverItalic>## Default: 1<CharStyle:>
-<ParaStyle:リスト><CharStyle:BoldBlack>error_log  <CharStyle:BoldGray>logs/error<CharStyle:RegularSilverItalic>.log;
-<ParaStyle:リスト><CharStyle:BoldBlack>pid        <CharStyle:BoldGray>logs/nginx<CharStyle:RegularSilverItalic>.pid;
-<ParaStyle:リスト><CharStyle:BoldBlack>worker_rlimit_nofile <CharStyle:RegularDark>8192;
+<ParaStyle:リスト><CharStyle:BoldBlack>user<CharStyle:>       <CharStyle:RegularSilverItalic>www<CharStyle:> <CharStyle:RegularSilverItalic>www<CharStyle:>;  <CharStyle:RegularSilverItalic>## Default: nobody<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>worker_processes<CharStyle:>  <CharStyle:RegularDark>5<CharStyle:>;  <CharStyle:RegularSilverItalic>## Default: 1<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>error_log<CharStyle:>  <CharStyle:BoldGray>logs/error<CharStyle:><CharStyle:RegularSilverItalic>.log<CharStyle:>;
+<ParaStyle:リスト><CharStyle:BoldBlack>pid<CharStyle:>        <CharStyle:BoldGray>logs/nginx<CharStyle:><CharStyle:RegularSilverItalic>.pid<CharStyle:>;
+<ParaStyle:リスト><CharStyle:BoldBlack>worker_rlimit_nofile<CharStyle:> <CharStyle:RegularDark>8192<CharStyle:>;
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>events {
-<ParaStyle:リスト>  <CharStyle:BoldBlack>worker_connections  <CharStyle:RegularDark>4096;  <CharStyle:RegularSilverItalic>## Default: 1024<CharStyle:>
+<ParaStyle:リスト><CharStyle:BoldBlack>events<CharStyle:> {
+<ParaStyle:リスト>  <CharStyle:BoldBlack>worker_connections<CharStyle:>  <CharStyle:RegularDark>4096<CharStyle:>;  <CharStyle:RegularSilverItalic>## Default: 1024<CharStyle:>
 <ParaStyle:リスト>}
 <ParaStyle:リスト>
-<ParaStyle:リスト><CharStyle:BoldBlack>http {
-<ParaStyle:リスト>  <CharStyle:BoldBlack>include    <CharStyle:BoldGray>conf/mime<CharStyle:RegularSilverItalic>.types;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>include    <CharStyle:BoldGray>/etc/nginx/proxy.conf;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>include    <CharStyle:BoldGray>/etc/nginx/fastcgi.conf;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>index    <CharStyle:RegularSilverItalic>index.html <CharStyle:RegularSilverItalic>index.htm <CharStyle:RegularSilverItalic>index.php;
+<ParaStyle:リスト><CharStyle:BoldBlack>http<CharStyle:> {
+<ParaStyle:リスト>  <CharStyle:BoldBlack>include<CharStyle:>    <CharStyle:BoldGray>conf/mime<CharStyle:><CharStyle:RegularSilverItalic>.types<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>include<CharStyle:>    <CharStyle:BoldGray>/etc/nginx/proxy.conf<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>include<CharStyle:>    <CharStyle:BoldGray>/etc/nginx/fastcgi.conf<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>index<CharStyle:>    <CharStyle:RegularSilverItalic>index.html<CharStyle:> <CharStyle:RegularSilverItalic>index.htm<CharStyle:> <CharStyle:RegularSilverItalic>index.php<CharStyle:>;
 <ParaStyle:リスト>
-<ParaStyle:リスト>  <CharStyle:BoldBlack>default_type <CharStyle:BoldGray>application/octet-stream;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>log_format   <CharStyle:RegularSilverItalic>main <CharStyle:RegularSilverItalic>'<CharStyle:BoldGray>$remote_addr <CharStyle:RegularSilverItalic>- <CharStyle:BoldGray>$remote_user <CharStyle:RegularSilverItalic>[<CharStyle:BoldGray>$time_local<CharStyle:RegularSilverItalic>]  <CharStyle:BoldGray>$status <CharStyle:RegularSilverItalic>'
-<ParaStyle:リスト>    <CharStyle:RegularSilverItalic>'"<CharStyle:BoldGray>$request<CharStyle:RegularSilverItalic>" <CharStyle:BoldGray>$body_bytes_sent <CharStyle:RegularSilverItalic>"<CharStyle:BoldGray>$http_referer<CharStyle:RegularSilverItalic>" <CharStyle:RegularSilverItalic>'
-<ParaStyle:リスト>    <CharStyle:RegularSilverItalic>'"<CharStyle:BoldGray>$http_user_agent<CharStyle:RegularSilverItalic>" <CharStyle:RegularSilverItalic>"<CharStyle:BoldGray>$http_x_forwarded_for<CharStyle:RegularSilverItalic>"';
-<ParaStyle:リスト>  <CharStyle:BoldBlack>access_log   <CharStyle:BoldGray>logs/access<CharStyle:RegularSilverItalic>.log  <CharStyle:RegularSilverItalic>main;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>sendfile     <CharStyle:BoldGray>on;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>tcp_nopush   <CharStyle:BoldGray>on;
-<ParaStyle:リスト>  <CharStyle:BoldBlack>server_names_hash_bucket_size <CharStyle:RegularDark>128; <CharStyle:RegularSilverItalic># this seems to be required for some vhosts<CharStyle:>
+<ParaStyle:リスト>  <CharStyle:BoldBlack>default_type<CharStyle:> <CharStyle:BoldGray>application/octet-stream<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>log_format<CharStyle:>   <CharStyle:RegularSilverItalic>main<CharStyle:> <CharStyle:RegularSilverItalic>'<CharStyle:><CharStyle:BoldGray>$remote_addr<CharStyle:> <CharStyle:RegularSilverItalic>-<CharStyle:> <CharStyle:BoldGray>$remote_user<CharStyle:> <CharStyle:RegularSilverItalic>[<CharStyle:><CharStyle:BoldGray>$time_local<CharStyle:><CharStyle:RegularSilverItalic>]<CharStyle:>  <CharStyle:BoldGray>$status<CharStyle:> <CharStyle:RegularSilverItalic>'<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:RegularSilverItalic>'"<CharStyle:><CharStyle:BoldGray>$request<CharStyle:><CharStyle:RegularSilverItalic>"<CharStyle:> <CharStyle:BoldGray>$body_bytes_sent<CharStyle:> <CharStyle:RegularSilverItalic>"<CharStyle:><CharStyle:BoldGray>$http_referer<CharStyle:><CharStyle:RegularSilverItalic>"<CharStyle:> <CharStyle:RegularSilverItalic>'<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:RegularSilverItalic>'"<CharStyle:><CharStyle:BoldGray>$http_user_agent<CharStyle:><CharStyle:RegularSilverItalic>"<CharStyle:> <CharStyle:RegularSilverItalic>"<CharStyle:><CharStyle:BoldGray>$http_x_forwarded_for<CharStyle:><CharStyle:RegularSilverItalic>"'<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>access_log<CharStyle:>   <CharStyle:BoldGray>logs/access<CharStyle:><CharStyle:RegularSilverItalic>.log<CharStyle:>  <CharStyle:RegularSilverItalic>main<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>sendfile<CharStyle:>     <CharStyle:BoldGray>on<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>tcp_nopush<CharStyle:>   <CharStyle:BoldGray>on<CharStyle:>;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>server_names_hash_bucket_size<CharStyle:> <CharStyle:RegularDark>128<CharStyle:>; <CharStyle:RegularSilverItalic># this seems to be required for some vhosts<CharStyle:>
 <ParaStyle:リスト>
-<ParaStyle:リスト>  <CharStyle:BoldBlack>server { <CharStyle:RegularSilverItalic># php/fastcgi<CharStyle:>
-<ParaStyle:リスト>    <CharStyle:BoldBlack>listen       <CharStyle:RegularDark>80;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>server_name  <CharStyle:RegularSilverItalic>domain1.com <CharStyle:RegularSilverItalic>www.domain1.com;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>access_log   <CharStyle:BoldGray>logs/domain<CharStyle:RegularDark>1<CharStyle:RegularSilverItalic>.access.log  <CharStyle:RegularSilverItalic>main;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>root         <CharStyle:RegularSilverItalic>html;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>server<CharStyle:> { <CharStyle:RegularSilverItalic># php/fastcgi<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:BoldBlack>listen<CharStyle:>       <CharStyle:RegularDark>80<CharStyle:>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>server_name<CharStyle:>  <CharStyle:RegularSilverItalic>domain1.com<CharStyle:> <CharStyle:RegularSilverItalic>www.domain1.com<CharStyle:>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>access_log<CharStyle:>   <CharStyle:BoldGray>logs/domain<CharStyle:><CharStyle:RegularDark>1<CharStyle:><CharStyle:RegularSilverItalic>.access.log<CharStyle:>  <CharStyle:RegularSilverItalic>main<CharStyle:>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>root<CharStyle:>         <CharStyle:RegularSilverItalic>html<CharStyle:>;
 <ParaStyle:リスト>
-<ParaStyle:リスト>    <CharStyle:BoldBlack>location ~ <CharStyle:RegularSilverItalic>\.php$ {
-<ParaStyle:リスト>      <CharStyle:BoldBlack>fastcgi_pass   <CharStyle:BoldGray>127.0.0.1:<CharStyle:RegularDark>1025;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>location<CharStyle:> ~ <CharStyle:RegularSilverItalic>\.php$<CharStyle:> {
+<ParaStyle:リスト>      <CharStyle:BoldBlack>fastcgi_pass<CharStyle:>   <CharStyle:BoldGray>127.0.0.1<CharStyle:>:<CharStyle:RegularDark>1025<CharStyle:>;
 <ParaStyle:リスト>    }
 <ParaStyle:リスト>  }
 <ParaStyle:リスト>
-<ParaStyle:リスト>  <CharStyle:BoldBlack>server { <CharStyle:RegularSilverItalic># simple reverse-proxy<CharStyle:>
-<ParaStyle:リスト>    <CharStyle:BoldBlack>listen       <CharStyle:RegularDark>80;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>server_name  <CharStyle:RegularSilverItalic>domain2.com <CharStyle:RegularSilverItalic>www.domain2.com;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>access_log   <CharStyle:BoldGray>logs/domain<CharStyle:RegularDark>2<CharStyle:RegularSilverItalic>.access.log  <CharStyle:RegularSilverItalic>main;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>server<CharStyle:> { <CharStyle:RegularSilverItalic># simple reverse-proxy<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:BoldBlack>listen<CharStyle:>       <CharStyle:RegularDark>80<CharStyle:>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>server_name<CharStyle:>  <CharStyle:RegularSilverItalic>domain2.com<CharStyle:> <CharStyle:RegularSilverItalic>www.domain2.com<CharStyle:>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>access_log<CharStyle:>   <CharStyle:BoldGray>logs/domain<CharStyle:><CharStyle:RegularDark>2<CharStyle:><CharStyle:RegularSilverItalic>.access.log<CharStyle:>  <CharStyle:RegularSilverItalic>main<CharStyle:>;
 <ParaStyle:リスト>
 <ParaStyle:リスト>    <CharStyle:RegularSilverItalic># serve static files<CharStyle:>
-<ParaStyle:リスト>    <CharStyle:BoldBlack>location ~ <CharStyle:RegularSilverItalic>^/(images|javascript|js|css|flash|media|static)/  {
-<ParaStyle:リスト>      <CharStyle:BoldBlack>root    <CharStyle:BoldGray>/var/www/virtual/big.server.com/htdocs;
-<ParaStyle:リスト>      <CharStyle:BoldBlack>expires <CharStyle:RegularSilverItalic>30d;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>location<CharStyle:> ~ <CharStyle:RegularSilverItalic>^/(images|javascript|js|css|flash|media|static)/<CharStyle:>  {
+<ParaStyle:リスト>      <CharStyle:BoldBlack>root<CharStyle:>    <CharStyle:BoldGray>/var/www/virtual/big.server.com/htdocs<CharStyle:>;
+<ParaStyle:リスト>      <CharStyle:BoldBlack>expires<CharStyle:> <CharStyle:RegularSilverItalic>30d<CharStyle:>;
 <ParaStyle:リスト>    }
 <ParaStyle:リスト>
 <ParaStyle:リスト>    <CharStyle:RegularSilverItalic># pass requests for dynamic content to rails/turbogears/zope, et al<CharStyle:>
-<ParaStyle:リスト>    <CharStyle:BoldBlack>location <CharStyle:BoldGray>/ {
-<ParaStyle:リスト>      <CharStyle:BoldBlack>proxy_pass      <CharStyle:RegularSilverItalic>http://127.0.0.1:8080;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>location<CharStyle:> <CharStyle:BoldGray>/<CharStyle:> {
+<ParaStyle:リスト>      <CharStyle:BoldBlack>proxy_pass<CharStyle:>      <CharStyle:RegularSilverItalic>http://127.0.0.1:8080<CharStyle:>;
 <ParaStyle:リスト>    }
 <ParaStyle:リスト>  }
 <ParaStyle:リスト>
-<ParaStyle:リスト>  <CharStyle:BoldBlack>upstream <CharStyle:RegularSilverItalic>big_server_com {
-<ParaStyle:リスト>    <CharStyle:BoldBlack>server <CharStyle:BoldGray>127.0.0.3:<CharStyle:RegularDark>8000 <CharStyle:RegularSilverItalic>weight=5;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>server <CharStyle:BoldGray>127.0.0.3:<CharStyle:RegularDark>8001 <CharStyle:RegularSilverItalic>weight=5;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>server <CharStyle:BoldGray>192.168.0.1:<CharStyle:RegularDark>8000;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>server <CharStyle:BoldGray>192.168.0.1:<CharStyle:RegularDark>8001;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>upstream<CharStyle:> <CharStyle:RegularSilverItalic>big_server_com<CharStyle:> {
+<ParaStyle:リスト>    <CharStyle:BoldBlack>server<CharStyle:> <CharStyle:BoldGray>127.0.0.3<CharStyle:>:<CharStyle:RegularDark>8000<CharStyle:> <CharStyle:RegularSilverItalic>weight=5<CharStyle:>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>server<CharStyle:> <CharStyle:BoldGray>127.0.0.3<CharStyle:>:<CharStyle:RegularDark>8001<CharStyle:> <CharStyle:RegularSilverItalic>weight=5<CharStyle:>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>server<CharStyle:> <CharStyle:BoldGray>192.168.0.1<CharStyle:>:<CharStyle:RegularDark>8000<CharStyle:>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>server<CharStyle:> <CharStyle:BoldGray>192.168.0.1<CharStyle:>:<CharStyle:RegularDark>8001<CharStyle:>;
 <ParaStyle:リスト>  }
 <ParaStyle:リスト>
-<ParaStyle:リスト>  <CharStyle:BoldBlack>server { <CharStyle:RegularSilverItalic># simple load balancing<CharStyle:>
-<ParaStyle:リスト>    <CharStyle:BoldBlack>listen          <CharStyle:RegularDark>80;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>server_name     <CharStyle:RegularSilverItalic>big.server.com;
-<ParaStyle:リスト>    <CharStyle:BoldBlack>access_log      <CharStyle:BoldGray>logs/big<CharStyle:RegularSilverItalic>.server.access.log <CharStyle:RegularSilverItalic>main;
+<ParaStyle:リスト>  <CharStyle:BoldBlack>server<CharStyle:> { <CharStyle:RegularSilverItalic># simple load balancing<CharStyle:>
+<ParaStyle:リスト>    <CharStyle:BoldBlack>listen<CharStyle:>          <CharStyle:RegularDark>80<CharStyle:>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>server_name<CharStyle:>     <CharStyle:RegularSilverItalic>big.server.com<CharStyle:>;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>access_log<CharStyle:>      <CharStyle:BoldGray>logs/big<CharStyle:><CharStyle:RegularSilverItalic>.server.access.log<CharStyle:> <CharStyle:RegularSilverItalic>main<CharStyle:>;
 <ParaStyle:リスト>
-<ParaStyle:リスト>    <CharStyle:BoldBlack>location <CharStyle:BoldGray>/ {
-<ParaStyle:リスト>      <CharStyle:BoldBlack>proxy_pass      <CharStyle:RegularSilverItalic>http://big_server_com;
+<ParaStyle:リスト>    <CharStyle:BoldBlack>location<CharStyle:> <CharStyle:BoldGray>/<CharStyle:> {
+<ParaStyle:リスト>      <CharStyle:BoldBlack>proxy_pass<CharStyle:>      <CharStyle:RegularSilverItalic>http://big_server_com<CharStyle:>;
 <ParaStyle:リスト>    }
 <ParaStyle:リスト>  }
