@@ -7,6 +7,81 @@ require "json"
 require "time"
 require "pathname"
 require "kramdown"
+require 'rouge'
+
+TABLE_FOR_ESCAPE_HTML = {
+  '&' => '&amp;',
+  '<' => '&lt;',
+  '>' => '&gt;',
+}
+
+class Inao < Rouge::Formatters::Null
+  # @yield the html output.
+  def stream(tokens, &b)
+    tokens.each { |token, val| yield span(token, val) }
+  end
+
+  def span(token, val)
+    safe_span(token, val.gsub(/[&<>]/, TABLE_FOR_ESCAPE_HTML))
+  end
+
+  def classname(classes)
+    return "RegularSilverItalic" if classes.include?("Comment")
+    return "RegularSilverItalic" if classes.include?("String")
+    return "RegularDark"         if classes.include?("Number")
+    return "RegularDark"         if classes.include?("Operator")
+    return "BoldBlack"           if classes.include?("Label")
+    return "BoldBlack"           if classes.include?("Tag")
+    return "BoldGray"            if classes.include?("Name")
+    return "BoldBlack"           if classes.include?("Keyword")
+
+    classes.join(" ")
+  end
+
+  def safe_span(tok, safe_val)
+    return safe_val if tok == Rouge::Token::Tokens::Text
+
+    classes = tok.qualname.split(".")
+
+    return "<CharStyle:#{self.classname(classes)}>#{safe_val}<CharStyle:>"
+  end
+end
+
+
+class L < Rouge::Formatters::HTML
+  def safe_span(tok, safe_val)
+    return safe_val if tok == Rouge::Token::Tokens::Text
+
+    classes = tok.qualname.split(".")
+
+    return "<span class=\"#{self.classname(classes)}\">#{safe_val}</span>"
+  end
+
+  def classname(classes)
+    return "RegularSilverItalic" if classes.include?("Comment")
+    return "RegularSilverItalic" if classes.include?("String")
+    return "RegularDark"         if classes.include?("Number")
+    return "RegularDark"         if classes.include?("Operator")
+    return "BoldBlack"           if classes.include?("Label")
+    return "BoldBlack"           if classes.include?("Tag")
+    return "BoldGray"            if classes.include?("Name")
+    return "BoldBlack"           if classes.include?("Keyword")
+
+    p classes
+    classes.join(" ")
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
 
 
 # html
@@ -287,6 +362,40 @@ EOS
   end
 end
 
+class Indesign < Markup
+  def article(node)
+    node.value
+  end
+  def section(node)
+    node.value
+  end
+  def header(node)
+    level = case node.options.level
+            when 1 then "大"
+            when 2 then "中"
+            when 3 then "小"
+            end
+    "<ParaStyle:#{level}見出し>#{node.value}\n"
+  end
+  def p(node)
+    "<ParaStyle:本文>#{node.value}\n"
+  end
+  def codeblock(node)
+    "<ParaStyle:半行アキ>\n" + pre(node)
+  end
+  def pre(node)
+    pp node.value
+
+    formatter = Inao.new
+    formatted = formatter.format(Rouge::Lexers::Javascript.new.lex(node.value))
+
+    formatted.split("\n").map{|line|
+      "<ParaStyle:リスト>#{line}"
+    }.join("\n")
+  end
+end
+
+
 # AMP 用に拡張した Markup
 class AMP < Markup
   def a(node)
@@ -416,24 +525,24 @@ class Traverser
   def leave(node)
     # puts "[##{__LINE__}] leave: #{node.type} #{node.value}"
 
-    if node.type == :codeblock
-      # コードを抜き取り、ここで id に置き換える
-      code = node.value
-      if code == ""
-        # code が書かれてなかったらファイルから読む
-        # ```js:main.js
-        node.attr["class"], node.path = node.attr["class"].split(":")
-        path = "./blog.jxck.io/#{@markup.baseurl}/#{node.path}"
-        code = File.read(path)
-      end
+    #if node.type == :codeblock
+    #  # コードを抜き取り、ここで id に置き換える
+    #  code = node.value
+    #  if code == ""
+    #    # code が書かれてなかったらファイルから読む
+    #    # ```js:main.js
+    #    node.attr["class"], node.path = node.attr["class"].split(":")
+    #    path = "./blog.jxck.io/#{@markup.baseurl}/#{node.path}"
+    #    code = File.read(path)
+    #  end
 
-      # インデントを無視するため、退避しておき全部組み上がったら後で差し込む。
-      hash = code.chomp.hash
-      @codes[hash] = code.chomp
+    #  # インデントを無視するため、退避しておき全部組み上がったら後で差し込む。
+    #  hash = code.chomp.hash
+    #  @codes[hash] = code.chomp
 
-      # あとで差し変えるため id として番号を入れておく
-      node.value = "// #{hash}"
-    end
+    #  # あとで差し変えるため id として番号を入れておく
+    #  node.value = "// #{hash}"
+    #end
 
     if node.children
       node.value = node.children.join
@@ -666,15 +775,19 @@ class Article
     # indent を無視するため
     # ここで pre に code を戻す
     # ついでにエスケープ
-    traverser.codes.each {|key, value|
-      article.gsub!("// #{key}") { hsc(value) }
-    }
+    #traverser.codes.each {|key, value|
+    #  article.gsub!("// #{key}") { hsc(value) }
+    #}
 
     @article = article
   end
 
   def htmlfile
     "#{dir}/#{name}.html"
+  end
+
+  def indesign_file
+    "#{dir}/#{name}.txt"
   end
 
   def to_s
@@ -810,6 +923,7 @@ if __FILE__ == $PROGRAM_NAME
     meta_template = File.read(".template/meta.html.erb") + File.read(".template/ld-json.html.erb")
     blog_template = File.read(".template/blog.html.erb")
     amp_template  = File.read(".template/amp.html.erb")
+    indesign_template = File.read(".template/indesign.txt")
 
     style = [
       "./blog.jxck.io/assets/css/article.css",
@@ -836,6 +950,13 @@ if __FILE__ == $PROGRAM_NAME
     meta = ERB.new(meta_template).result(entry.instance_eval { binding }).strip
     html = ERB.new(amp_template).result(binding).strip
     File.write(entry.ampfile, html)
+
+    # indesign
+    indesign = Indesign.new
+    entry.build(indesign)
+    txt = ERB.new(indesign_template).result(binding).strip
+    File.write(entry.indesign_file, txt)
+
   end
 
   # blog feed

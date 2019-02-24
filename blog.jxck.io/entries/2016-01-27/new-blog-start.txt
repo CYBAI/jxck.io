@@ -1,0 +1,23 @@
+<SJIS-MAC>
+
+  <ParaStyle:大見出し>Blog を移転しました
+  <ParaStyle:中見出し>Intro
+  <ParaStyle:本文>長いこと
+  <ParaStyle:小見出し>サンプルコード
+  <ParaStyle:半行アキ>
+  <ParaStyle:リスト><CharStyle:BoldBlack>if<CharStyle:> <CharStyle:Punctuation>(<CharStyle:><CharStyle:RegularSilverItalic>'ServiceWorkerGlobalScope'<CharStyle:> <CharStyle:BoldBlack>in<CharStyle:> <CharStyle:BoldGray>self<CharStyle:> <CharStyle:RegularDark>&amp;&amp;<CharStyle:> <CharStyle:BoldGray>self<CharStyle:> <CharStyle:BoldBlack>instanceof<CharStyle:> <CharStyle:BoldGray>ServiceWorkerGlobalScope<CharStyle:><CharStyle:Punctuation>)<CharStyle:> <CharStyle:Punctuation>{<CharStyle:>
+  <ParaStyle:リスト>  <CharStyle:Punctuation>[<CharStyle:><CharStyle:RegularSilverItalic>'install'<CharStyle:><CharStyle:Punctuation>,<CharStyle:> <CharStyle:RegularSilverItalic>'activate'<CharStyle:><CharStyle:Punctuation>,<CharStyle:> <CharStyle:RegularSilverItalic>'beforeevicted'<CharStyle:><CharStyle:Punctuation>,<CharStyle:> <CharStyle:RegularSilverItalic>'evicted'<CharStyle:><CharStyle:Punctuation>,<CharStyle:> <CharStyle:RegularSilverItalic>'fetch'<CharStyle:><CharStyle:Punctuation>,<CharStyle:> <CharStyle:RegularSilverItalic>'message'<CharStyle:><CharStyle:Punctuation>,<CharStyle:> <CharStyle:RegularSilverItalic>'push'<CharStyle:><CharStyle:Punctuation>].<CharStyle:><CharStyle:BoldGray>forEach<CharStyle:><CharStyle:Punctuation>((<CharStyle:><CharStyle:BoldGray>e<CharStyle:><CharStyle:Punctuation>)<CharStyle:> <CharStyle:RegularDark>=&gt;<CharStyle:> <CharStyle:Punctuation>{<CharStyle:>
+  <ParaStyle:リスト>    <CharStyle:BoldGray>self<CharStyle:><CharStyle:Punctuation>.<CharStyle:><CharStyle:BoldGray>addEventListener<CharStyle:><CharStyle:Punctuation>(<CharStyle:><CharStyle:BoldGray>e<CharStyle:><CharStyle:Punctuation>,<CharStyle:> <CharStyle:Punctuation>(<CharStyle:><CharStyle:BoldGray>ev<CharStyle:><CharStyle:Punctuation>)<CharStyle:> <CharStyle:RegularDark>=&gt;<CharStyle:> <CharStyle:Punctuation>{<CharStyle:>
+  <ParaStyle:リスト>      <CharStyle:BoldGray>console<CharStyle:><CharStyle:Punctuation>.<CharStyle:><CharStyle:BoldGray>log<CharStyle:><CharStyle:Punctuation>(<CharStyle:><CharStyle:BoldGray>e<CharStyle:><CharStyle:Punctuation>,<CharStyle:> <CharStyle:BoldGray>ev<CharStyle:><CharStyle:Punctuation>);<CharStyle:>
+  <ParaStyle:リスト>    <CharStyle:Punctuation>});<CharStyle:>
+  <ParaStyle:リスト>  <CharStyle:Punctuation>});<CharStyle:>
+  <ParaStyle:リスト>
+  <ParaStyle:リスト>  <CharStyle:BoldGray>self<CharStyle:><CharStyle:Punctuation>.<CharStyle:><CharStyle:BoldGray>addEventListener<CharStyle:><CharStyle:Punctuation>(<CharStyle:><CharStyle:RegularSilverItalic>'install'<CharStyle:><CharStyle:Punctuation>,<CharStyle:> <CharStyle:Punctuation>(<CharStyle:><CharStyle:BoldGray>ev<CharStyle:><CharStyle:Punctuation>)<CharStyle:> <CharStyle:RegularDark>=&gt;<CharStyle:> <CharStyle:Punctuation>{<CharStyle:>
+  <ParaStyle:リスト>    <CharStyle:BoldGray>ev<CharStyle:><CharStyle:Punctuation>.<CharStyle:><CharStyle:BoldGray>waitUntil<CharStyle:><CharStyle:Punctuation>(<CharStyle:><CharStyle:BoldGray>self<CharStyle:><CharStyle:Punctuation>.<CharStyle:><CharStyle:BoldGray>skipWaiting<CharStyle:><CharStyle:Punctuation>());<CharStyle:>
+  <ParaStyle:リスト>  <CharStyle:Punctuation>});<CharStyle:>
+  <ParaStyle:リスト>
+  <ParaStyle:リスト>  <CharStyle:BoldGray>self<CharStyle:><CharStyle:Punctuation>.<CharStyle:><CharStyle:BoldGray>addEventListener<CharStyle:><CharStyle:Punctuation>(<CharStyle:><CharStyle:RegularSilverItalic>'activate'<CharStyle:><CharStyle:Punctuation>,<CharStyle:> <CharStyle:Punctuation>(<CharStyle:><CharStyle:BoldGray>ev<CharStyle:><CharStyle:Punctuation>)<CharStyle:> <CharStyle:RegularDark>=&gt;<CharStyle:> <CharStyle:Punctuation>{<CharStyle:>
+  <ParaStyle:リスト>    <CharStyle:BoldGray>ev<CharStyle:><CharStyle:Punctuation>.<CharStyle:><CharStyle:BoldGray>waitUntil<CharStyle:><CharStyle:Punctuation>(<CharStyle:><CharStyle:BoldGray>self<CharStyle:><CharStyle:Punctuation>.<CharStyle:><CharStyle:BoldGray>clients<CharStyle:><CharStyle:Punctuation>.<CharStyle:><CharStyle:BoldGray>claim<CharStyle:><CharStyle:Punctuation>());<CharStyle:>
+  <ParaStyle:リスト>    <CharStyle:BoldGray>console<CharStyle:><CharStyle:Punctuation>.<CharStyle:><CharStyle:BoldGray>log<CharStyle:><CharStyle:Punctuation>(<CharStyle:><CharStyle:RegularSilverItalic>'claimed'<CharStyle:><CharStyle:Punctuation>);<CharStyle:>
+  <ParaStyle:リスト>  <CharStyle:Punctuation>});<CharStyle:>
+  <ParaStyle:リスト><CharStyle:Punctuation>}<CharStyle:>

@@ -2,12 +2,14 @@ GEM
   remote: https://rubygems.org/
   specs:
     kramdown (1.17.0)
+    rouge (3.3.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   kramdown
+  rouge
 
 BUNDLED WITH
-   1.16.1
+   2.0.1
