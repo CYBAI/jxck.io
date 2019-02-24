@@ -48,30 +48,6 @@ class Inao < Rouge::Formatters::Null
 end
 
 
-class L < Rouge::Formatters::HTML
-  def safe_span(tok, safe_val)
-    return safe_val if tok == Rouge::Token::Tokens::Text
-
-    classes = tok.qualname.split(".")
-
-    return "<span class=\"#{self.classname(classes)}\">#{safe_val}</span>"
-  end
-
-  def classname(classes)
-    return "RegularSilverItalic" if classes.include?("Comment")
-    return "RegularSilverItalic" if classes.include?("String")
-    return "RegularDark"         if classes.include?("Number")
-    return "RegularDark"         if classes.include?("Operator")
-    return "BoldBlack"           if classes.include?("Label")
-    return "BoldBlack"           if classes.include?("Tag")
-    return "BoldGray"            if classes.include?("Name")
-    return "BoldBlack"           if classes.include?("Keyword")
-
-    p classes
-    classes.join(" ")
-  end
-end
-
 
 
 
@@ -384,10 +360,11 @@ class Indesign < Markup
     "<ParaStyle:半行アキ>\n" + pre(node)
   end
   def pre(node)
-    pp node.value
+    lang = node.options.lang
 
     formatter = Inao.new
-    formatted = formatter.format(Rouge::Lexers::Javascript.new.lex(node.value))
+    lexer     = Rouge::Lexer.find(lang)
+    formatted = formatter.format(lexer.lex(node.value))
 
     formatted.split("\n").map{|line|
       "<ParaStyle:リスト>#{line}"

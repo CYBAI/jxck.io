@@ -15,21 +15,21 @@ by Jxck
 <link rel=author href=https://jxck.io/assets/humans.txt>
 
 <meta name=author content=Jxck>
-  <meta name=description content="長いこと...">
-  <meta name=keywords content="web,blog">
+  <meta name=description content="サンプルコードがハイライトされてないのは技術書籍の怠慢...">
+  <meta name=keywords content="book,indesign">
 
   <meta name=twitter:card content=summary>
   <meta name=twitter:site content=@jxck_>
   <meta name=twitter:url content="https://blog.jxck.io/entries/2016-01-27/new-blog-start.html">
-  <meta name=twitter:title content="Blog を移転しました | blog.jxck.io">
-  <meta name=twitter:description content="長いこと...">
+  <meta name=twitter:title content="syntax-highlighted tagged text | blog.jxck.io">
+  <meta name=twitter:description content="サンプルコードがハイライトされてないのは技術書籍の怠慢...">
   <meta name=twitter:image content="https://jxck.io/assets/img/jxck.png">
 
   <meta property=og:type content=article>
   <meta property=og:url content="https://blog.jxck.io/entries/2016-01-27/new-blog-start.html">
-  <meta property=og:title content="Blog を移転しました | blog.jxck.io">
+  <meta property=og:title content="syntax-highlighted tagged text | blog.jxck.io">
   <meta property=og:site_name content="blog.jxck.io">
-  <meta property=og:description content="長いこと...">
+  <meta property=og:description content="サンプルコードがハイライトされてないのは技術書籍の怠慢...">
   <meta property=og:image content="https://jxck.io/assets/img/jxck.png">
 
   <link rel="shortcut icon" href="https://jxck.io/assets/img/jxck.png">
@@ -47,7 +47,7 @@ by Jxck
     "@type":"WebPage",
     "@id":"https://blog.jxck.io"
   },
-  "headline": "Blog を移転しました | blog.jxck.io",
+  "headline": "syntax-highlighted tagged text | blog.jxck.io",
   "image": [
     "https://jxck.io/assets/img/jxck.png",
     "https://logo.jxck.io/jxck.1200x1200.png"
@@ -69,11 +69,11 @@ by Jxck
       "width": 60
     }
   },
-  "description": "長いこと..."
+  "description": "サンプルコードがハイライトされてないのは技術書籍の怠慢..."
 }
 </script>
 
-<title>Blog を移転しました | blog.jxck.io</title>
+<title>syntax-highlighted tagged text | blog.jxck.io</title>
 <script async custom-element=amp-analytics src=https://cdn.ampproject.org/v0/amp-analytics-0.1.js></script>
 <script async custom-element=amp-iframe src=https://cdn.ampproject.org/v0/amp-iframe-0.1.js></script>
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -783,33 +783,285 @@ td:last-child {
   <ul class=info>
     <li>created_at: <time class=created_at datetime=2016-01-27>2016-01-27</time>
     <li>updated_at: <time class=updated_at datetime=2019-02-24>2019-02-24</time>
-    <li class=tags>tags: [<a href='/tags/web.html'>web</a>,<a href='/tags/blog.html'>blog</a>]
+    <li class=tags>tags: [<a href='/tags/book.html'>book</a>,<a href='/tags/indesign.html'>indesign</a>]
   </ul>
 
 
   <article>
-    <h1><a href=/entries/2016-01-27/new-blog-start.html>Blog を移転しました</a></h1>
+    <h1><a href=/entries/2016-01-27/new-blog-start.html>syntax-highlighted tagged text</a></h1>
     <section>
       <h2 id="intro"><a href="#intro">Intro</a></h2>
-      <p>長いこと
+      <p>サンプルコードがハイライトされてないのは技術書籍の怠慢
       <section>
-        <h3 id="サンプルコード"><a href="#サンプルコード">サンプルコード</a></h3>
-        <pre class=js><code translate="no">if ('ServiceWorkerGlobalScope' in self && self instanceof ServiceWorkerGlobalScope) {
-          ['install', 'activate', 'beforeevicted', 'evicted', 'fetch', 'message', 'push'].forEach((e) => {
-            self.addEventListener(e, (ev) => {
-              console.log(e, ev);
-            });
-          });
+        <h3 id="javascript"><a href="#javascript">Javascript</a></h3>
+        <pre class=javascript><code translate="no">import file from fs
         
-          self.addEventListener('install', (ev) => {
-            ev.waitUntil(self.skipWaiting());
-          });
+        function callback(err, file) {
+          if (err) return console.error(err);
         
-          self.addEventListener('activate', (ev) => {
-            ev.waitUntil(self.clients.claim());
-            console.log('claimed');
-          });
+          /* ここで色々する */
+        };
+        
+        file.open(callback);
+        
+        class Test extends EventEmitter {
+          constructor(data) {
+            this.data = data
+          }
+        
+          jquery() {
+            $('body').innerHTML = "alert('xss')"
+          }
+        
+          promise() {
+            return Promise.resolve('foo')
+          }
         }
+        
+        const test = new Test()
+        test.promise().then((e) => {
+          console.log(e)
+        })
+        
+        export module;
+        </code></pre>
+      </section>
+      <section>
+        <h3 id="css"><a href="#css">CSS</a></h3>
+        <pre class=css><code translate="no">strong::before,
+        strong::after {
+          content: "**";
+        }
+        
+        ul li::before {
+          content: "- ";
+        }
+        
+        ol {
+          counter-reset: list;
+        }
+        
+        ol li::before {
+          counter-increment: list;
+          content: counter(list) ". ";
+        }
+        
+        dl dt::after {
+          content: ":";
+        }
+        
+        blockquote {
+          display: block;
+          border: solid 1px var(--block-quote);
+          border-radius: 4px;
+          padding: 0.4em 1em;
+          margin: 0;
+        }
+        </code></pre>
+      </section>
+      <section>
+        <h3 id="html"><a href="#html">HTML</a></h3>
+        <pre class=html><code translate="no"><!DOCTYPE html>
+        <meta charset=utf-8>
+        <meta name=viewport content="width=device-width,initial-scale=1">
+        <title>DEMO | labs.jxck.io</title>
+        
+        <style>
+        </style>
+        
+        <h1>Test</h1>
+        <p>this is <strong>sample</strong> text</p>
+        
+        <div>
+          <video src="some.mp4">
+          <img src=some.webp label="good picture">
+        
+          <form action=/login method=post>
+            <input type=text name=username>
+            <input type=password name=password>
+            <button type=submit>ok</button>
+          </form>
+        </div>
+        
+        </code></pre>
+      </section>
+      <section>
+        <h3 id="java"><a href="#java">Java</a></h3>
+        <pre class=java><code translate="no">public class DecimalOctal {
+        
+            public static void main(String[] args) {
+                int decimal = 78;
+                int octal = convertDecimalToOctal(decimal);
+                System.out.printf("%d in decimal = %d in octal", decimal, octal);
+            }
+        
+            public static int convertDecimalToOctal(int decimal)
+            {
+                int octalNumber = 0, i = 1;
+        
+                while (decimal != 0)
+                {
+                    octalNumber += (decimal % 8) * i;
+                    decimal /= 8;
+                    i *= 10;
+                }
+        
+                return octalNumber;
+            }
+        }
+        </code></pre>
+      </section>
+      <section>
+        <h3 id="http"><a href="#http">HTTP</a></h3>
+        <pre class=http><code translate="no">POST /demo/submit/ HTTP/1.1
+        Host: rouge.jneen.net
+        Cache-Control: max-age=0
+        Origin: http://rouge.jayferd.us
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.63 Safari/535.7
+        Content-Type: application/json
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Referer: http://pygments.org/
+        Accept-Encoding: gzip,deflate,sdch
+        Accept-Language: en-US,en;q=0.8
+        Accept-Charset: windows-949,utf-8;q=0.7,*;q=0.3
+        
+        {"name":"test","lang":"text","boring":true}
+        </code></pre>
+      </section>
+      <section>
+        <h3 id="go"><a href="#go">Go</a></h3>
+        <pre class=go><code translate="no">package main
+        
+        import (
+        	"fmt"
+        	"math"
+        )
+        
+        type Abser interface {
+        	Abs() float64
+        }
+        
+        func main() {
+        	var a Abser
+        	f := MyFloat(-math.Sqrt2)
+        	v := Vertex{3, 4}
+        
+        	a = f  // a MyFloat implements Abser
+        	a = &v // a *Vertex implements Abser
+        
+        	// In the following line, v is a Vertex (not *Vertex)
+        	// and does NOT implement Abser.
+        	a = v
+        
+        	fmt.Println(a.Abs())
+        }
+        
+        type MyFloat float64
+        
+        func (f MyFloat) Abs() float64 {
+        	if f < 0 {
+        		return float64(-f)
+        	}
+        	return float64(f)
+        }
+        
+        type Vertex struct {
+        	X, Y float64
+        }
+        
+        func (v *Vertex) Abs() float64 {
+        	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+        }
+        </code></pre>
+      </section>
+      <section>
+        <h3 id="makefile"><a href="#makefile">Makefile</a></h3>
+        <pre class=makefile><code translate="no"># Makefile
+        .PHONY: all
+        all: main
+        
+        main: main.o
+        	gcc -o main main.o
+        
+        main.o: main.c
+        	gcc -c main.c
+        
+        .PHONY: clean
+        clean:
+        	rm -rf main main.o
+        </code></pre>
+      </section>
+      <section>
+        <h3 id="nginx"><a href="#nginx">Nginx</a></h3>
+        <pre class=nginx><code translate="no">user       www www;  ## Default: nobody
+        worker_processes  5;  ## Default: 1
+        error_log  logs/error.log;
+        pid        logs/nginx.pid;
+        worker_rlimit_nofile 8192;
+        
+        events {
+          worker_connections  4096;  ## Default: 1024
+        }
+        
+        http {
+          include    conf/mime.types;
+          include    /etc/nginx/proxy.conf;
+          include    /etc/nginx/fastcgi.conf;
+          index    index.html index.htm index.php;
+        
+          default_type application/octet-stream;
+          log_format   main '$remote_addr - $remote_user [$time_local]  $status '
+            '"$request" $body_bytes_sent "$http_referer" '
+            '"$http_user_agent" "$http_x_forwarded_for"';
+          access_log   logs/access.log  main;
+          sendfile     on;
+          tcp_nopush   on;
+          server_names_hash_bucket_size 128; # this seems to be required for some vhosts
+        
+          server { # php/fastcgi
+            listen       80;
+            server_name  domain1.com www.domain1.com;
+            access_log   logs/domain1.access.log  main;
+            root         html;
+        
+            location ~ \.php$ {
+              fastcgi_pass   127.0.0.1:1025;
+            }
+          }
+        
+          server { # simple reverse-proxy
+            listen       80;
+            server_name  domain2.com www.domain2.com;
+            access_log   logs/domain2.access.log  main;
+        
+            # serve static files
+            location ~ ^/(images|javascript|js|css|flash|media|static)/  {
+              root    /var/www/virtual/big.server.com/htdocs;
+              expires 30d;
+            }
+        
+            # pass requests for dynamic content to rails/turbogears/zope, et al
+            location / {
+              proxy_pass      http://127.0.0.1:8080;
+            }
+          }
+        
+          upstream big_server_com {
+            server 127.0.0.3:8000 weight=5;
+            server 127.0.0.3:8001 weight=5;
+            server 192.168.0.1:8000;
+            server 192.168.0.1:8001;
+          }
+        
+          server { # simple load balancing
+            listen          80;
+            server_name     big.server.com;
+            access_log      logs/big.server.access.log main;
+        
+            location / {
+              proxy_pass      http://big_server_com;
+            }
+          }
         </code></pre>
       </section>
     </section>
