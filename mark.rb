@@ -35,15 +35,19 @@ class Inao < Rouge::Formatters::Null
     return "BoldGray"            if classes.include?("Name")
     return "BoldBlack"           if classes.include?("Keyword")
 
-    classes.join(" ")
+    return nil
   end
 
   def safe_span(tok, safe_val)
     return safe_val if tok == Rouge::Token::Tokens::Text
 
-    classes = tok.qualname.split(".")
+    classes = self.classname(tok.qualname.split("."))
 
-    return "<CharStyle:#{self.classname(classes)}>#{safe_val}<CharStyle:>"
+    if classes != nil
+      return "<CharStyle:#{classes}>#{safe_val}<CharStyle:>"
+    else
+      safe_val
+    end
   end
 end
 
