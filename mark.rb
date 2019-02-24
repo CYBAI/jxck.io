@@ -339,6 +339,10 @@ EOS
 end
 
 class Indesign < Markup
+
+  def initialize
+    @indent = ""
+  end
   def article(node)
     node.value
   end
