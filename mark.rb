@@ -809,7 +809,7 @@ if __FILE__ == $PROGRAM_NAME
   def blog(entry)
     meta_template = File.read(".template/meta.html.erb") + File.read(".template/ld-json.html.erb")
     blog_template = File.read(".template/blog.html.erb")
-    amp_template = File.read(".template/amp.html.erb")
+    amp_template  = File.read(".template/amp.html.erb")
 
     style = [
       "./blog.jxck.io/assets/css/article.css",
@@ -826,12 +826,12 @@ if __FILE__ == $PROGRAM_NAME
     # blog
     markup = Markup.new
     entry.build(markup)
-    meta = ERB.new(meta_template).result(entry.instance_eval { binding }).strip
-    html = ERB.new(blog_template).result(binding).strip
+    meta   = ERB.new(meta_template).result(entry.instance_eval { binding }).strip
+    html   = ERB.new(blog_template).result(binding).strip
     File.write(entry.htmlfile, html)
 
     # amp
-    amp = AMP.new
+    amp  = AMP.new
     entry.build(amp)
     meta = ERB.new(meta_template).result(entry.instance_eval { binding }).strip
     html = ERB.new(amp_template).result(binding).strip
@@ -843,8 +843,8 @@ if __FILE__ == $PROGRAM_NAME
     puts "build blog"
 
     # entries
-    dir = "./blog.jxck.io/entries/**/*"
-    icon = "https://jxck.io/assets/img/jxck.png"
+    dir     = "./blog.jxck.io/entries/**/*"
+    icon    = "https://jxck.io/assets/img/jxck.png"
     entries = Dir.glob(dir)
                  .select { |path| path.match(/.*.md\z/) }
                  .map { |path| Entry.new(path, icon) }
@@ -877,37 +877,37 @@ if __FILE__ == $PROGRAM_NAME
       acc.merge(entry) { |_key, old, new| new + old }
     }
 
-    tag = "Tags"
+    tag           = "Tags"
     tags_template = File.read(".template/tags.html.erb")
-    template = ERB.new(tags_template).result(binding).strip
-    html = ERB.new(template).result(binding)
+    template      = ERB.new(tags_template).result(binding).strip
+    html          = ERB.new(template).result(binding)
     File.write("./blog.jxck.io/tags/index.html", html)
 
     tags.each {|tag, v|
-      tags = { tag => v }
+      tags          = { tag => v }
       tags_template = File.read(".template/tags.html.erb")
-      template = ERB.new(tags_template).result(binding).strip
-      html = ERB.new(template).result(binding)
+      template      = ERB.new(tags_template).result(binding).strip
+      html          = ERB.new(template).result(binding)
       File.write("./blog.jxck.io/tags/#{tag}.html", html)
     }
   end
 
   def podcast(episode)
-    icon = "https://mozaic.fm/assets/img/mozaic.png"
-    meta_template = File.read(".template/meta.html.erb")
+    icon             = "https://mozaic.fm/assets/img/mozaic.png"
+    meta_template    = File.read(".template/meta.html.erb")
     podcast_template = File.read(".template/podcast.html.erb")
 
     # entry
     markup = Podcast.new
     episode.build(markup)
-    meta = ERB.new(meta_template).result(episode.instance_eval { binding }).strip
-    html = ERB.new(podcast_template).result(binding).strip
+    meta   = ERB.new(meta_template).result(episode.instance_eval { binding }).strip
+    html   = ERB.new(podcast_template).result(binding).strip
     File.write(episode.htmlfile, html)
   end
 
   def podcastfeed(feed = false)
     puts "build podcast"
-    dir = "./mozaic.fm/episodes/**/*"
+    dir  = "./mozaic.fm/episodes/**/*"
     host = "mozaic.fm"
 
     # episodes
