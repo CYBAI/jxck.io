@@ -350,6 +350,7 @@ class Indesign < Markup
 
   def initialize
     @indent = ""
+    @layer  = 0
   end
   def article(node)
     node.value
@@ -382,6 +383,24 @@ class Indesign < Markup
       "<ParaStyle:リスト>#{line}"
     }.join("\n")
   end
+
+  def li(node)
+    if node.level == 0
+      pp node
+      puts 
+      "<ParaStyle:箇条書き>・#{node.children.select{|n| n != ""}.join("\n")}"
+    else
+      "<ParaStyle:箇条書き#{node.level+1}階層目>・#{node.children.select{|n| n != ""}.join("\n")}"
+    end
+  end
+  def ul(node)
+    if node.level == 0
+      "<ParaStyle:半行アキ>\n" + node.children.select{|n| n != ""}.join("\n")
+    else
+      node.children.select{|n| n != ""}.join("\n")
+    end
+  end
+
 end
 
 
@@ -436,6 +455,13 @@ class Traverser
       node.children = children
     end
 
+    if node.type == :ul
+      # 階層番号を初期化
+      # 増やすのは :li の中で
+      level = node.level || 0
+      node.level = level
+    end
+
     if node.type == :li
       # li の子には p が入るのでこれを除く
       first = node.children.shift
@@ -451,6 +477,21 @@ class Traverser
         # もし li の子が :text 1 つだけなら閉じない
         node.close = false
       end
+
+      # 階層番号を入れる
+      level = node.level || 0
+      node.level = level
+      node.children.each{|child|
+        # li の下の ul の下の li たちは level を下げる
+        if child.type == :ul
+          child.level = level+1
+          child.children.each{|grandchild|
+            grandchild.level = level+1
+          }
+        end
+      }
+
+
     end
 
     if node.type == :p and node.children
