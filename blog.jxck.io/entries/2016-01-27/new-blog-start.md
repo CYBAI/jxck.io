@@ -8,7 +8,7 @@
 ### Javascript
 
 
-```javascript
+```js
 import file from fs
 
 function callback(err, file) {
