@@ -385,56 +385,6 @@ class Indesign < Markup
 end
 
 
-# AMP 用に拡張した Markup
-class AMP < Markup
-  def a(node)
-    if node.attr["href"].match(%r{^chrome:\/\/})
-      # amp page ignores `chrome://` url
-      return node.attr["href"]
-    end
-    super(node)
-  end
-  def codeblock(node)
-    pre(node)
-  end
-  def table(node)
-    tabletag(node)
-  end
-  def img(node)
-    width, height = imgsize(node)
-
-    # AMP should specify width-height
-    if width == "" || height == ""
-      STDERR.puts("no width x height for img")
-      exit(1)
-    end
-    %(<amp-img layout=responsive src=#{node.attr['src']} alt="#{node.attr['alt']}" title="#{node.attr['title']}" #{width} #{height}>)
-  end
-  def html_element(node)
-    value = super(node)
-    if value.match(/<iframe.*/)
-      value.gsub!(/iframe/, 'amp-iframe')
-      value.gsub!(/ lazyload/, '')
-    end
-    value
-  end
-end
-
-class Podcast < Markup
-  def header(node)
-    level = node.options.level
-    if level == 1
-      # h1 の中身はタイトル
-      @title = node.value
-      # h1 だけは self url にリンク
-      return %(<h#{level}><a href=#{@url}>#{@title}</a></h#{level}>\n)
-    else
-      # h2 以降はそのまま
-      return %(<h#{level}>#{node.value}</h#{level}>\n)
-    end
-  end
-end
-
 # markup をセットして生成したら
 # ast を渡すと traverse しながらビルドしてくれる
 class Traverser
@@ -911,7 +861,6 @@ if __FILE__ == $PROGRAM_NAME
   def blog(entry)
     meta_template = File.read(".template/meta.html.erb") + File.read(".template/ld-json.html.erb")
     blog_template = File.read(".template/blog.html.erb")
-    amp_template  = File.read(".template/amp.html.erb")
     indesign_template = File.read(".template/indesign.txt")
 
     style = [
@@ -932,13 +881,6 @@ if __FILE__ == $PROGRAM_NAME
     meta   = ERB.new(meta_template).result(entry.instance_eval { binding }).strip
     html   = ERB.new(blog_template).result(binding).strip
     File.write(entry.htmlfile, html)
-
-    # amp
-    amp  = AMP.new
-    entry.build(amp)
-    meta = ERB.new(meta_template).result(entry.instance_eval { binding }).strip
-    html = ERB.new(amp_template).result(binding).strip
-    File.write(entry.ampfile, html)
 
     # indesign
     indesign = Indesign.new
@@ -1002,52 +944,6 @@ if __FILE__ == $PROGRAM_NAME
     }
   end
 
-  def podcast(episode)
-    icon             = "https://mozaic.fm/assets/img/mozaic.png"
-    meta_template    = File.read(".template/meta.html.erb")
-    podcast_template = File.read(".template/podcast.html.erb")
-
-    # entry
-    markup = Podcast.new
-    episode.build(markup)
-    meta   = ERB.new(meta_template).result(episode.instance_eval { binding }).strip
-    html   = ERB.new(podcast_template).result(binding).strip
-    File.write(episode.htmlfile, html)
-  end
-
-  def podcastfeed(feed = false)
-    puts "build podcast"
-    dir  = "./mozaic.fm/episodes/**/*"
-    host = "mozaic.fm"
-
-    # episodes
-    episodes = Dir.glob(dir)
-                  .select { |path| path.match(/.*.md\z/) }
-                  .map { |path| Episode.new(path) }
-                  .sort
-                  .reverse
-                  .map.with_index {|ep, i|
-                    ep.order = i
-                    ep
-                  }
-
-    if feed
-      puts "build podcast feed"
-      xml = ERB.new(File.read(".template/rss2.xml.erb")).result(binding)
-      File.write("./feed.mozaic.fm/index.xml", xml)
-    end
-
-    episodes.each.with_index {|e, i|
-      e.prev = episodes[i+1] if i < episodes.size
-      e.next = episodes[i-1] if i > 0
-      podcast(e)
-    }
-
-    puts "build index.html"
-    archive = ERB.new(File.read(".template/podcast.index.html.erb")).result(binding)
-    File.write("./mozaic.fm/index.html", archive)
-  end
-
 
   ########################
   # TEST
@@ -1061,11 +957,6 @@ if __FILE__ == $PROGRAM_NAME
     exit 0
   end
 
-  if ARGV.include? "-tp"
-    # test podcast
-    entry = Episode.new("./mozaic.fm/episodes/1/webcomponents.md")
-    # podcast(entry)
-  end
 
 
   ########################
@@ -1074,11 +965,6 @@ if __FILE__ == $PROGRAM_NAME
   # $ mark.rb blog feed
   if ARGV.include? "blog"
     blogfeed(ARGV.include?("feed"))
-  end
-
-  # $ mark.rb podcast feed
-  if ARGV.include? "podcast"
-    podcastfeed(ARGV.include?("feed"))
   end
 
   if ARGV.include? "full"
