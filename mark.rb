@@ -359,18 +359,13 @@ class Indesign < Markup
     node.value
   end
   def header(node)
-    level = case node.options.level
-            when 1 then "大"
-            when 2 then "中"
-            when 3 then "小"
-            end
-    "<ParaStyle:#{level}見出し>#{node.value}\n"
+    "<ParaStyle:h#{node.options.level}>#{node.value}\n"
   end
   def p(node)
-    "<ParaStyle:本文>#{node.value}\n"
+    "<ParaStyle:p>#{node.value}\n"
   end
   def codeblock(node)
-    "<ParaStyle:半行アキ>\n" + pre(node)
+    "<ParaStyle:br>\n" + pre(node)
   end
   def pre(node)
     lang = node.options.lang
@@ -385,17 +380,11 @@ class Indesign < Markup
   end
 
   def li(node)
-    if node.level == 0
-      pp node
-      puts 
-      "<ParaStyle:箇条書き>・#{node.children.select{|n| n != ""}.join("\n")}"
-    else
-      "<ParaStyle:箇条書き#{node.level+1}階層目>・#{node.children.select{|n| n != ""}.join("\n")}"
-    end
+    "<ParaStyle:li#{node.level+1}>・#{node.children.select{|n| n != ""}.join("\n")}"
   end
   def ul(node)
     if node.level == 0
-      "<ParaStyle:半行アキ>\n" + node.children.select{|n| n != ""}.join("\n")
+      "<ParaStyle:br>\n" + node.children.select{|n| n != ""}.join("\n")
     else
       node.children.select{|n| n != ""}.join("\n")
     end
