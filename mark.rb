@@ -375,7 +375,7 @@ class Indesign < Markup
     formatted = formatter.format(lexer.lex(node.value))
 
     formatted.split("\n").map{|line|
-      "<ParaStyle:リスト>#{line}"
+      "<ParaStyle:pre>#{line}"
     }.join("\n")
   end
 

@@ -16,3 +16,13 @@
     - なな
   - はち
 - きゅー
+
+
+## sample code
+
+
+```js
+document.addEventListener('DOMContentLoaded', (e) => {
+  console.log(e)
+})
+```
