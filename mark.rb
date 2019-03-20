@@ -32,8 +32,8 @@ class Inao < Rouge::Formatters::Null
     return "RegularDark"         if classes.include?("Operator")
     return "BoldBlack"           if classes.include?("Label")
     return "BoldBlack"           if classes.include?("Tag")
-    return "BoldGray"            if classes.include?("Name")
     return "BoldBlack"           if classes.include?("Keyword")
+    return "BoldGray"            if classes.include?("Name")
 
     return nil
   end
